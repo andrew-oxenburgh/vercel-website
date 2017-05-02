@@ -5,7 +5,7 @@ locale: en_NZ
 description: Christchurch based Full Stack Web Developer
 logo: site-logo.svg
 search: true
-url: http://localhost:4000
+url: https://andrew-oxenburgh.github.io
 
 # Jekyll configuration
 
