@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Full Stack Web Developer"
+title: "A few of my favourite things"
 categories: blog
 excerpt:
 tags: []
@@ -9,3 +9,7 @@ image:
 date: 2017-05-02
 ---
 
+# Definitely under construction
+
+| git| github| python|javascript|
+|css|sass|html|jQuery|
