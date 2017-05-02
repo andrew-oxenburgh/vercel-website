@@ -58,22 +58,22 @@ exclude: ["lib",
 
 # Site owner
 owner:
-  name: Your Name
+  name: Andrew Oxenburgh
   avatar: bio-photo.jpg
   email: you@email.com
-  disqus-shortname:
-  twitter: #username
-  facebook: #username
-  github: #username
+  disqus-shortname: andrewoxenburgh
+  twitter: andrewoxenburgh
+  facebook: andrew.oxenburgh
+  github: andrew-oxenburgh
   stackexchange: #http://stackoverflow.com/users/123456/username
-  linkedin: #username
+  linkedin: andrew-oxenburgh-a789b17
   instagram: #username
   flickr: #username
   tumblr: #username
-  pinterest: #username
+  pinterest: andrewoxenburgh
   weibo: #userid
   google:
-    plus: #username
+    plus: andrew-oxenburgh
     analytics:
     verify:
     ad-client:
