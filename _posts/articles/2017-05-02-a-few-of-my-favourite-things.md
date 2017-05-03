@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "A few of my favourite things"
+title: A few of my favourite thingies
 categories: blog
 excerpt:
 tags: []
