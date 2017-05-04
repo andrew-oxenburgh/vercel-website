@@ -6,7 +6,7 @@ $code-font                : 'source-code-pro', monospace;
 $alt-font                 : 'atomic-age', 'volkhov', serif;
 
 $doc-font-size            : 16;
-$doc-line-height          : 24;
+$doc-line-height          : 20;
 
 $border-radius            : 3px;
 
@@ -19,13 +19,13 @@ body {
 
 
 // COLORS =====================================================
-$body-color               : #fff;
-$text-color               : #222;
+$body-color               : #f0f6f6;
+$text-color               : #2b4748;
 $base-color               : #343434;
 $comp-color               : adjust-hue($base-color, 180);
 $border-color             : #ddd;
 $white                    : #fff;
-$black                    : #000;
+$black                    : #192b2b;
 $accent-color             : $black;
 $link-color               : #222;
 
