@@ -66,4 +66,4 @@ def test_not_not_truthiness_in_asserts():
 ~~~
 {: .language-python}
 
-I come form a strict C/C++/Java style of programming, and my preferences are all informed by that, but when unit testing, be specific.
+I come from a strict C/C++/Java style of programming, and my preferences are all informed by that, but when unit testing, be specific.
