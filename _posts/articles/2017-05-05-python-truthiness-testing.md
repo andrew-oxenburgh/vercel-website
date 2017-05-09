@@ -6,7 +6,7 @@ excerpt:
 tags: []
 image:
   feature:
-date: 2017-05-02
+date: 2017-05-05
 ---
 
 Python is a great language. I love Dynamically Typed language because it can be a lot easier to get code up and running, and real life isn't statically typed.
