@@ -2,7 +2,7 @@
 
 title: Andrew Oxenburgh
 locale: en_NZ
-description: Christchurch based Full Stack Web Developer
+description: Christchurch based Single Dad (and Web Developer)
 logo: site-logo.svg
 search: true
 url: ''
@@ -60,7 +60,7 @@ exclude: ["lib",
 owner:
   name: Andrew Oxenburgh
   avatar: bio-photo.jpg
-  email: you@email.com
+  email: andrew.oxenburgh@gmail.com
   disqus-shortname: andrewoxenburgh
   twitter: andrewoxenburgh
   facebook: andrew.oxenburgh
@@ -76,6 +76,6 @@ owner:
     plus: andrew-oxenburgh
     analytics:
     verify:
-    ad-client:
+    ad-client: ca-pub-2032471926952139
     ad-slot:
   bing-verify:
