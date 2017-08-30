@@ -6,6 +6,8 @@ description: Christchurch based Single Dad (and Web Developer)
 logo: site-logo.svg
 search: true
 url: ''
+destination: public
+source: src
 
 # Jekyll configuration
 
