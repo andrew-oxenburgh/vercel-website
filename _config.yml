@@ -33,28 +33,29 @@ kramdown:
 mathjax: true
 include: [".htaccess"]
 
-exclude: ["lib",
-  "config.rb",
-  "Capfile",
-  "config",
-  "log",
-  "Rakefile",
-  "Rakefile.rb",
-  "tmp",
-  ".less",
+exclude: [
   "*.sublime-project",
   "*.sublime-workspace",
-  "test",
-  "spec",
-  "Gruntfile.js",
-  "package.json",
-  "node_modules",
+  ".less",
+  ".sass-cache",
+  "Capfile",
   "Gemfile",
   "Gemfile.lock",
+  "Gruntfile.js",
   "LICENSE",
   "README.md",
+  "Rakefile",
+  "Rakefile.rb",
+  "config",
+  "config.rb",
+  "lib",
+  "log",
+  "node_modules",
+  "package.json",
+  "spec",
+  "test",
+  "tmp",
   "vendor",
-  ".sass-cache"
 ]
 
 
