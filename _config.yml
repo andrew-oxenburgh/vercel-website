@@ -5,8 +5,8 @@ locale: en_NZ
 description: Christchurch based Single Dad (and Web Developer)
 logo: site-logo.svg
 search: true
-url: ''
-source: ./src
+url: 'https://andrew-oxenburgh.github.io'
+source: .
 destination: ./public
 
 # Jekyll configuration
