@@ -1,0 +1,64 @@
+import BlogPost from '../../../components/BlogPost'
+
+export const meta = {
+    title: 'create a ts module',
+    description: 'create a ts module',
+    date: 'July 4, 2021',
+    readTime: 5,
+}
+
+export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
+
+### Create export package
+
+1. `mkdir create-tx-and-export-it`
+2. `cd create-tx-and-export-it`
+3. `yarn init`
+1. `git init`
+4. `yarn add typescript`
+5. Create file `index.ts` with code:
+
+```js
+console.log('hello, world');
+```
+
+6. From command line run `node index.ts`
+should output `hello, world`
+
+7. add following to `package.json`
+
+```json
+  "scripts": {
+    "run:script": "node index.ts"
+  }
+```
+
+8. run `yarn run:script`
+Should get the same result
+
+9. Create dir called `src`
+
+10. Move `index.tx` to `~/src`
+
+11. modify script and main tags to reflect this
+
+12. Change the script text so you can see it's picking up the correct version.
+
+13. Now add another
+
+14. run `git init`
+
+15. touch `.gitignore` and add `**/*.js` and any editor or IDE config stuff
+
+16. run `git status` and tidy your `.gitignore`
+
+17. run `git add .`
+
+17. run `git commit -m beginning`
+
+### Create import package
+
+1. `mkdir import-tx`
+2. `cd import-tx`
+3. `yarn init`
+4. `yarn add ../create-tx-and-export-it`

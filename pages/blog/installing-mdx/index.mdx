@@ -1,0 +1,22 @@
+import BlogPost from '../../../components/BlogPost'
+
+export const meta = {
+    title: 'Starting my blog',
+    description: 'How I got here',
+    date: 'June 10, 2021',
+    readTime: 5,
+}
+
+export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
+
+# Installing MDX and customizing it for moi.
+
+I picked up this [blog post](https://www.smashingmagazine.com/2020/09/build-blog-nextjs-mdx/) and went from there.
+
+As is the case with a lot of <Tutorial>tutorials</Tutorial>, download from the sandbox and work backwards from there.
+
+I then modified it by:
+ - changing `post-n` to useful names - really not that hard
+ - This example uses `<style jsx>` styling, which is new to me, so your milage may vary.
+ - Created my first component in MDX. All exciting stuff
+ - Converted it to Material-UI

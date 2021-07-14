@@ -1,0 +1,24 @@
+import BlogPost from '../../../components/BlogPost'
+
+export const meta = {
+    title: 'multi source github page',
+    description: 'I want to have several apps, with a single entry point',
+    date: 'July 1, 2021',
+    readTime: 5,
+}
+
+export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
+
+# Get your github page going
+
+In my case it's https://andrew-oxenburgh.github.io/
+
+I have several projects under here that I want to be able to maintain separately.
+
+## Blog header
+
+Which is where my blog posts actually go
+
+## Oxs-dnd
+
+Using a 3rd party API

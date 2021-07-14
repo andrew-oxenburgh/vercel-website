@@ -1,0 +1,20 @@
+import {Typography} from "@material-ui/core";
+
+import {DemoButton} from '@andrew.oxenburgh/cool-button-demo-imported-react-button'
+
+export default ({children}) => <Typography>{children}</Typography>;
+
+# Simple component
+
+I created this to get a handle on what&apos;s required for deployment of a stand alone component
+
+| what | where |
+| ---- | ---- |
+| NPM  | <a href="https://www.npmjs.com/package/@andrew.oxenburgh/cool-button-demo" target="_blank">https://www.npmjs.com/package/@andrew.oxenburgh/cool-button-demo</a> |
+| github | <a href="https://github.com/andrew-oxenburgh/cool-button-to-demo-imported-react-button" target="_blank">https://github.com/andrew-oxenburgh/cool-button-to-demo-imported-react-button</a> |
+
+<br/>
+
+<DemoButton label="button" backgroundColor="pink" onClick={() => {
+   alert('clicked on here')
+}}/>
