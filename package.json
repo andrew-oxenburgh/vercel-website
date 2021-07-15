@@ -1,6 +1,6 @@
 {
-  "name": "blog-header",
-  "version": "1.0.0",
+  "name": "andrew-oxenburgh.github.io",
+  "version": "1.0.1",
   "private": false,
   "scripts": {
     "dev": "next dev",
