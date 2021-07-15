@@ -1,4 +1,12 @@
-import {Typography} from "@material-ui/core";
-export default ({children}) => <Typography>{children}</Typography>;
+import {Summary} from '../components/Summary';
+import {posts} from '../getAllPosts';
 
-# Home
+export default function IndexPage() {
+   return (
+      <>
+         {posts.map(post => (
+            <Summary key={post.link} post={post} />
+         ))}
+      </>
+   );
+}
