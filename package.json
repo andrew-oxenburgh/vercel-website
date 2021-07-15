@@ -5,6 +5,7 @@
    "main": "./src/index.js",
    "license": "MIT",
    "scripts": {
+      "clean": "rimraf node_modules out",
       "dev": "next dev",
       "build": "next build",
       "start": "next start",

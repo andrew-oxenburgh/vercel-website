@@ -27,6 +27,9 @@ export default function Header() {
 				<Link href="/components">
 					<Button color="inherit">Components</Button>
 				</Link>
+				<Link href="/deployment-checks">
+					<Button color="inherit">Deployment Checks</Button>
+				</Link>
 			</Toolbar>
 		</AppBar>
 	);
