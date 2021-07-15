@@ -1,7 +1,7 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 
 import Layout from '../components/Layout';
+import PropTypes from 'prop-types';
 
 export default function App({Component, pageProps}) {
 	return (
@@ -10,3 +10,9 @@ export default function App({Component, pageProps}) {
 		</Layout>
 	);
 }
+
+App.propTypes = {
+	Component: PropTypes.any,
+	pageProps: PropTypes.any,
+};
+

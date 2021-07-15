@@ -1,7 +1,7 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 
 import {Typography} from '@material-ui/core';
+import PropTypes from 'prop-types';
 
 export const HeadPost = ({meta, isBlogPost}) => (
 	<Typography>
@@ -17,3 +17,14 @@ export const HeadPost = ({meta, isBlogPost}) => (
 		</div>
 	</Typography>
 );
+
+HeadPost.propTypes = {
+	isBlogPost: PropTypes.bool,
+	meta: PropTypes.shape({
+		title: PropTypes.string,
+		date: PropTypes.string,
+		readTime: PropTypes.string,
+		description: PropTypes.string,
+	}),
+};
+

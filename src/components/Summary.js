@@ -1,9 +1,9 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 
 import Link from 'next/link';
 import {HeadPost} from './HeadPost';
 import {Button, Typography} from '@material-ui/core';
+import PropTypes from 'prop-types';
 
 export const Summary = ({post}) => {
 	const {
@@ -22,3 +22,12 @@ export const Summary = ({post}) => {
 		</article>
 	);
 };
+
+Summary.propTypes = {
+	post: PropTypes.shape({
+		link: PropTypes.string,
+		module: PropTypes.string,
+		readTime: PropTypes.string,
+	}),
+};
+

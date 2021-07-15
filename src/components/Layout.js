@@ -1,8 +1,8 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 
 import Head from 'next/head';
 import Header from './Header';
+import PropTypes from 'prop-types';
 
 export default function Layout({children, pageTitle, description}) {
 	return (
@@ -20,3 +20,9 @@ export default function Layout({children, pageTitle, description}) {
 		</>
 	);
 }
+
+Layout.propTypes = {
+	children: PropTypes.element,
+	pageTitle: PropTypes.string,
+	description: PropTypes.string,
+};

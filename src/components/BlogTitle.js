@@ -1,7 +1,7 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 
 import {Typography} from '@material-ui/core';
+import PropTypes from 'prop-types';
 
 export default function BlogTitle({children}) {
 	return (
@@ -12,3 +12,7 @@ export default function BlogTitle({children}) {
 		</>
 	);
 }
+
+BlogTitle.propTypes = {
+	children: PropTypes.element,
+};
