@@ -22,7 +22,10 @@ export default function Layout({children, pageTitle, description}) {
 }
 
 Layout.propTypes = {
-	children: PropTypes.array,
+	children: PropTypes.oneOfType([
+		PropTypes.object,
+		PropTypes.array,
+	]),
 	pageTitle: PropTypes.string,
 	description: PropTypes.string,
 };

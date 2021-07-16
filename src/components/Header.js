@@ -2,7 +2,7 @@ import React from 'react';
 
 import Link from 'next/link';
 import {useRouter} from 'next/router';
-import {AppBar, Button, IconButton, Toolbar, Typography} from '@material-ui/core';
+import {AppBar, Button, IconButton, Toolbar} from '@material-ui/core';
 import * as PropTypes from 'prop-types';
 
 function LinkButton({router, href, label}) {
@@ -23,10 +23,9 @@ LinkButton.propTypes = {
 	label: PropTypes.string,
 	router: PropTypes.object,
 };
+
 export default function Header() {
 	const router = useRouter();
-
-	console.log('router = ' + JSON.stringify(router, null, 4));
 
 	return (
 		<AppBar position="static">
@@ -34,10 +33,8 @@ export default function Header() {
 				<IconButton edge="start" color="inherit" aria-label="menu">
 					{/* <MenuIcon /> */}
 				</IconButton>
-				<Link href="/">
-					<Typography variant="h6">
-                        Andrew Oxenburgh&apos;s Blog
-					</Typography>
+				<Link href="/" >
+					<h3>𝕿𝖍𝖊 𝕺𝖝 &nbsp;</h3>
 				</Link>
 
 				<LinkButton href="/" label="Home" router={router}/>
