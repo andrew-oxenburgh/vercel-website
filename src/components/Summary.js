@@ -26,8 +26,8 @@ export const Summary = ({post}) => {
 Summary.propTypes = {
 	post: PropTypes.shape({
 		link: PropTypes.string,
-		module: PropTypes.string,
-		readTime: PropTypes.string,
+		module: PropTypes.object,
+		readTime: PropTypes.number,
 	}),
 };
 

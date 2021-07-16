@@ -22,7 +22,7 @@ export default function Layout({children, pageTitle, description}) {
 }
 
 Layout.propTypes = {
-	children: PropTypes.element,
+	children: PropTypes.array,
 	pageTitle: PropTypes.string,
 	description: PropTypes.string,
 };

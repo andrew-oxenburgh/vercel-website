@@ -35,7 +35,7 @@ export default function BlogPost({children, meta}) {
 }
 
 BlogPost.propTypes = {
-	children: PropTypes.element,
+	children: PropTypes.array,
 	meta: PropTypes.shape({
 		title: PropTypes.string,
 		date: PropTypes.string,
