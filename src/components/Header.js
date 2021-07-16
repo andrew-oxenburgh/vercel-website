@@ -2,27 +2,9 @@ import React from 'react';
 
 import Link from 'next/link';
 import {useRouter} from 'next/router';
-import {AppBar, Button, IconButton, Toolbar} from '@material-ui/core';
-import * as PropTypes from 'prop-types';
-
-function LinkButton({router, href, label}) {
-	const calcColor = function (router, path) {
-		return (router.pathname === path) ? 'secondary' : 'primary';
-	};
-
-	return (
-		<Link href={href}>
-			<Button variant="contained" color={calcColor(router, href)}>{label}</Button>
-		</Link>
-
-	);
-}
-
-LinkButton.propTypes = {
-	href: PropTypes.string,
-	label: PropTypes.string,
-	router: PropTypes.object,
-};
+import {AppBar, IconButton, Toolbar} from '@material-ui/core';
+import LinkButton from './LinkButton';
+import MenuIcon from '@material-ui/icons/Menu';
 
 export default function Header() {
 	const router = useRouter();
@@ -31,9 +13,9 @@ export default function Header() {
 		<AppBar position="static">
 			<Toolbar>
 				<IconButton edge="start" color="inherit" aria-label="menu">
-					{/* <MenuIcon /> */}
+					<MenuIcon/>
 				</IconButton>
-				<Link href="/" >
+				<Link href="/">
 					<h3>𝕿𝖍𝖊 𝕺𝖝 &nbsp;</h3>
 				</Link>
 
