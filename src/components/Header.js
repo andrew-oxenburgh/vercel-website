@@ -24,6 +24,7 @@ export default function Header() {
 				<LinkButton href="/about" label="About" router={router}/>
 				<LinkButton href="/components" label="Components" router={router}/>
 				<LinkButton href="/deployment-checks" label="Deployment" router={router}/>
+				<LinkButton href="/to-do" label="To Do" router={router}/>
 			</Toolbar>
 		</AppBar>
 	);

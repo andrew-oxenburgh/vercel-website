@@ -23,8 +23,10 @@ HeadPost.propTypes = {
 	meta: PropTypes.shape({
 		title: PropTypes.string,
 		date: PropTypes.string,
-		readTime: PropTypes.string,
+		readTime: PropTypes.oneOfType([
+			PropTypes.string,
+			PropTypes.number,
+		]),
 		description: PropTypes.string,
 	}),
 };
-

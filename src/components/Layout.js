@@ -1,8 +1,16 @@
+/* eslint-disable react/display-name */
 import React from 'react';
 
 import Head from 'next/head';
 import Header from './Header';
 import PropTypes from 'prop-types';
+import {MDXProvider} from '@mdx-js/react';
+import CodeBlock from './CodeBlock';
+
+const components = {
+	pre: props => <div {...props} />,
+	code: CodeBlock,
+};
 
 export default function Layout({children, pageTitle, description}) {
 	return (
@@ -13,10 +21,12 @@ export default function Layout({children, pageTitle, description}) {
 				<meta name="description" content={description}/>
 				<title>{pageTitle}</title>
 			</Head>
-			<main>
-				<Header/>
-				<div className="content">{children}</div>
-			</main>
+			<MDXProvider components={components}>
+				<main>
+					<Header/>
+					<div className="content">{children}</div>
+				</main>
+			</MDXProvider>
 		</>
 	);
 }

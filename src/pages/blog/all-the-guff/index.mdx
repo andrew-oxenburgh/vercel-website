@@ -1,0 +1,93 @@
+import BlogPost from '../../../components/BlogPost'
+
+export const meta = {
+    title: 'all the guff',
+    description: 'What goes into a finished JS app',
+    date: 'July 27, 2021',
+    readTime: '5',
+}
+
+export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
+
+# What goes into a finished app or JS app
+
+1. EditorConfig
+
+   [EditorConfig](https://editorconfig.org/)
+
+   Coding standards are pretty important. They give confidence of quality and prevent some hard to detect errors.
+
+   Code modifiers use a variety of editors and a variety of environments, each with their own default editor configs.
+
+   EditorConfig provides a standard that's supported by most code editors (VS, JetBrains...), and those that don't usually have plugins available.
+
+   EditorConfig a standard for editors to define things like:
+    - charset (utf-8, utf-16...)
+    - end of line definition (lf, cr/lf, whatever)
+    - end of file definition (empty line at end or not)
+
+   That means whatever editor a code modifier might use, they'll have a fixed standard for what text files looks like. You can specify text standards based on file type.
+
+   It's just a file called `.editorconfig` in the root of your project that looks something like:
+
+   ```bash
+   # EditorConfig is awesome: https://EditorConfig.org
+
+   # top-most EditorConfig file
+   root = true
+
+   # Unix-style newlines with a newline ending every file
+   [*]
+   end_of_line = lf
+   insert_final_newline = true
+
+   # Matches multiple files with brace expansion notation
+   # Set default charset
+   [*.{js,py}]
+   charset = utf-8
+
+   # 4 space indentation
+   [*.py]
+   indent_style = space
+   indent_size = 4
+
+   # Tab indentation (no size specified)
+   [Makefile]
+   indent_style = tab
+
+   # Indentation override for all JS under lib directory
+   [lib/**.js]
+   indent_style = space
+   indent_size = 2
+
+   # Matches the exact files either package.json or .travis.yml
+   [{package.json,.travis.yml}]
+   indent_style = space
+   indent_size = 2
+
+   ```
+
+1. snyk
+
+   [snyk](https://snyk.io/)
+
+   Find and fix code vulnerabilities. JS projects have lots of dependencies. And those dependencies have dependencies. Any one of those may have vulnerablities.
+
+   Snyk maintains a database of known vulnerabilities. You run your project past Snyk and it produces a report of your vulnerabilities.
+
+1. ESLint
+
+   [ESLint](https://eslint.org/)
+
+1. storybook
+
+1. Tidy `package.json`
+
+   Fill in all the fields and make sure they're accurate.
+
+1. tidy `readme.MD`
+
+1. `.gitignore`
+
+
+
