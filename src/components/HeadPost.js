@@ -2,13 +2,13 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-export const HeadPost = ({meta, isBlogPost}) => (
+export const HeadPost = ({meta}) => (
 	<>
-		<h1 className={isBlogPost ? 'great-title' : null}>{meta.title}</h1>
+		<div className="great-title">{meta.title}</div>
 		<div className="details">
-			{
-				isBlogPost ? null : <p>{meta.description}</p>
-			}
+			{/* { */}
+			{/*	isBlogPost ? null : <p>{meta.description}</p> */}
+			{/* } */}
 			<span>{meta.date}</span>
 			<span role="img" aria-label="one coffee">
         ☕ {meta.readTime + ' min read'}

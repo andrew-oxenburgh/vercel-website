@@ -2,6 +2,7 @@ import React from 'react';
 
 import Layout from '../components/Layout';
 import PropTypes from 'prop-types';
+import '../override.scss';
 
 export default function App({Component, pageProps}) {
 	return (

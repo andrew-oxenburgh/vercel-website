@@ -1,17 +1,17 @@
 import React, {useState} from 'react';
 
 import {useRouter} from 'next/router';
-import {AppBar, IconButton, useMediaQuery, Tabs, Tab} from '@material-ui/core';
+import {AppBar, IconButton, useMediaQuery, Tabs, Tab, Box} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import PropTypes from 'prop-types';
 
 export default function Header() {
 	const router = useRouter();
 	const isMobile = useMediaQuery(theme => theme.breakpoints.down('sm'));
-	const [open, setOpen] = useState();
+	const [mobileMenuOpen, setMobileMenuOpen] = useState();
 
 	function toggleMenu() {
-		setOpen(!open);
+		setMobileMenuOpen(!mobileMenuOpen);
 	}
 
 	function LinkTab(props) {
@@ -38,7 +38,7 @@ export default function Header() {
 
 	const tabs = (
 		<Tabs
-			variant="fullWidth"
+			variant="scrollable"
 			value={router.pathname}
 			orientation={isMobile ? 'vertical' : 'horizontal'}
 		>
@@ -51,25 +51,32 @@ export default function Header() {
 		</Tabs>
 	);
 
-	const nameFromHref = {
-		'/': 'Home',
-		'/projects': 'Projects',
-		'/about': 'About',
-		'/components': 'Components',
-		'/deployment-checks': 'Deployment',
-		'/to-do': 'To do',
+	const nameFromHref = href => {
+		const defaults = {
+			'/': 'Home',
+			'/to-do': 'To do',
+		};
+
+		let ret = defaults[href];
+		if (!ret) {
+			ret = href.replace('/', '');
+			ret = ret.replace('/', ' ');
+			ret = ret.replaceAll('-', ' ');
+		}
+
+		return ret;
 	};
 
-	const mobile = open ? (
+	const mobile = mobileMenuOpen ? (
 		<>{tabs}</>
 	)
 		: (
-			<>
+			<Box>
 				<IconButton onClick={() => toggleMenu()}>
 					<MenuIcon/>
-					{nameFromHref[router.pathname] || 'unknown'}
+					{nameFromHref(router.pathname) || 'unknown'}
 				</IconButton>
-			</>
+			</Box>
 		);
 
 	const body = isMobile ? (
