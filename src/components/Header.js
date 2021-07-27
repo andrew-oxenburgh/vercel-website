@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 
 export default function Header() {
 	const router = useRouter();
-	const isMobile = useMediaQuery(theme => theme.breakpoints.down('sm'));
+	const isMobile = useMediaQuery(theme => theme.breakpoints.down('xs'));
 	const [mobileMenuOpen, setMobileMenuOpen] = useState();
 
 	function toggleMenu() {
@@ -36,10 +36,17 @@ export default function Header() {
 		};
 	}
 
+	let value = router.pathname;
+
+	value = value.replace(/(\/blog)\/.*/, '$1');
+	if (value === '/blog') {
+		value = '/';
+	}
+
 	const tabs = (
 		<Tabs
 			variant="scrollable"
-			value={router.pathname}
+			value={value}
 			orientation={isMobile ? 'vertical' : 'horizontal'}
 		>
 			<LinkTab href="/" label="𝕿𝖍𝖊 𝕺𝖝 &nbsp;" router={router} value={'/'} {...a11yProps(0)}/>
@@ -61,7 +68,7 @@ export default function Header() {
 		if (!ret) {
 			ret = href.replace('/', '');
 			ret = ret.replace('/', ' ');
-			ret = ret.replace(/\-/g, ' ');
+			ret = ret.replace(/-/g, ' ');
 		}
 
 		return ret;

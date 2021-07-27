@@ -1,21 +1,45 @@
 import React from 'react';
 
 import Link from 'next/link';
-import {HeadPost} from './HeadPost';
-import {Button} from '@material-ui/core';
 import PropTypes from 'prop-types';
+import {makeStyles} from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+	article: {
+		paddingTop: '1em',
+	},
+	articleDetails: {
+		cursor: 'pointer',
+		'&:hover': {
+			opacity: 0.5,
+		},
+	},
+	articleTitle: {
+		textDecoration: 'underline',
+		fontWeight: 'bold',
+		fontSize: '150%',
+	},
+});
 
 export const Summary = ({post}) => {
+	const classes = useStyles();
+
 	const {
 		link,
 		module: {meta},
 	} = post;
 
 	return (
-		<article>
-			<HeadPost meta={meta}/>
-			<Link href={'/blog' + link}>
-				<Button color="inherit">Read more →</Button>
+		<article className={classes.article}>
+			<Link href={'/blog' + link} className={classes.link}>
+				<span className={classes.articleDetails}>
+					<span className={classes.articleTitle}>{meta.title}</span>
+					<span>&nbsp;{meta.date}</span>
+					<span role="img" aria-label="coffee">
+        ☕ {meta.readTime + ' min read'}
+					</span>
+					<span >Read more →</span>
+				</span>
 			</Link>
 		</article>
 	);
