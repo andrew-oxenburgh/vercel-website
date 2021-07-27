@@ -61,7 +61,7 @@ export default function Header() {
 		if (!ret) {
 			ret = href.replace('/', '');
 			ret = ret.replace('/', ' ');
-			ret = ret.replaceAll('-', ' ');
+			ret = ret.replace(/\-/g, ' ');
 		}
 
 		return ret;
