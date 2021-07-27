@@ -1,10 +1,9 @@
 import React from 'react';
 
-import {Typography} from '@material-ui/core';
 import PropTypes from 'prop-types';
 
 export const HeadPost = ({meta, isBlogPost}) => (
-	<Typography>
+	<>
 		<h1 className={isBlogPost ? 'great-title' : null}>{meta.title}</h1>
 		<div className="details">
 			{
@@ -15,7 +14,7 @@ export const HeadPost = ({meta, isBlogPost}) => (
         ☕ {meta.readTime + ' min read'}
 			</span>
 		</div>
-	</Typography>
+	</>
 );
 
 HeadPost.propTypes = {

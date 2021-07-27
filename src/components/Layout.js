@@ -6,11 +6,14 @@ import Header from './Header';
 import PropTypes from 'prop-types';
 import {MDXProvider} from '@mdx-js/react';
 import CodeBlock from './CodeBlock';
+import {ThemeProvider, createMuiTheme} from '@material-ui/core/styles';
 
 const components = {
 	pre: props => <div {...props} />,
 	code: CodeBlock,
 };
+
+const theme = createMuiTheme();
 
 export default function Layout({children, pageTitle, description}) {
 	return (
@@ -23,7 +26,9 @@ export default function Layout({children, pageTitle, description}) {
 			</Head>
 			<MDXProvider components={components}>
 				<main>
-					<Header/>
+					<ThemeProvider theme={theme}>
+						<Header/>
+					</ThemeProvider>
 					<div className="content">{children}</div>
 				</main>
 			</MDXProvider>

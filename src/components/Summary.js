@@ -2,7 +2,7 @@ import React from 'react';
 
 import Link from 'next/link';
 import {HeadPost} from './HeadPost';
-import {Button, Typography} from '@material-ui/core';
+import {Button} from '@material-ui/core';
 import PropTypes from 'prop-types';
 
 export const Summary = ({post}) => {
@@ -13,12 +13,10 @@ export const Summary = ({post}) => {
 
 	return (
 		<article>
-			<Typography>
-				<HeadPost meta={meta}/>
-				<Link href={'/blog' + link}>
-					<Button color="inherit">Read more →</Button>
-				</Link>
-			</Typography>
+			<HeadPost meta={meta}/>
+			<Link href={'/blog' + link}>
+				<Button color="inherit">Read more →</Button>
+			</Link>
 		</article>
 	);
 };
