@@ -4,11 +4,19 @@ import Layout from '../components/Layout';
 import PropTypes from 'prop-types';
 import '../override.scss';
 
+import {StylesProvider, createGenerateClassName} from '@material-ui/core/styles';
+
+const generateClassName = createGenerateClassName({
+	disableGlobal: true,
+});
+
 export default function App({Component, pageProps}) {
 	return (
-		<Layout pageTitle="Blog" description="My Personal Blog">
-			<Component {...pageProps} />
-		</Layout>
+		<StylesProvider generateClassName={generateClassName}>
+			<Layout pageTitle="Blog" description="My Personal Blog">
+				<Component {...pageProps} />
+			</Layout>
+		</StylesProvider>
 	);
 }
 

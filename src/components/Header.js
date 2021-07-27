@@ -4,8 +4,19 @@ import {useRouter} from 'next/router';
 import {AppBar, IconButton, useMediaQuery, Tabs, Tab, Box} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import PropTypes from 'prop-types';
+import {makeStyles} from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+	tab: {
+		'&:hover': {
+			opacity: 1.0,
+			fontWeight: 'bold',
+		},
+	},
+});
 
 export default function Header() {
+	const classes = useStyles();
 	const router = useRouter();
 	const isMobile = useMediaQuery(theme => theme.breakpoints.down('xs'));
 	const [mobileMenuOpen, setMobileMenuOpen] = useState();
@@ -16,7 +27,7 @@ export default function Header() {
 
 	function LinkTab(props) {
 		return (
-			<Tab
+			<Tab className={classes.tab}
 				component="a"
 				value={props.href}
 				{...props}
