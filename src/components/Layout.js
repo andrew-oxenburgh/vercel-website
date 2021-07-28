@@ -2,7 +2,7 @@
 import React from 'react';
 
 import Head from 'next/head';
-import Header from './Header';
+import NavBar from './NavBar';
 import PropTypes from 'prop-types';
 import {MDXProvider} from '@mdx-js/react';
 import CodeBlock from './CodeBlock';
@@ -27,7 +27,7 @@ export default function Layout({children, pageTitle, description}) {
 			<MDXProvider components={components}>
 				<main>
 					<ThemeProvider theme={theme}>
-						<Header/>
+						<NavBar/>
 					</ThemeProvider>
 					<div className="content">{children}</div>
 				</main>

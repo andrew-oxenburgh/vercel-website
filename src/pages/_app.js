@@ -6,9 +6,7 @@ import '../override.scss';
 
 import {StylesProvider, createGenerateClassName} from '@material-ui/core/styles';
 
-const generateClassName = createGenerateClassName({
-	// DisableGlobal: true,
-});
+const generateClassName = createGenerateClassName({});
 
 export default function App({Component, pageProps}) {
 	return (

@@ -8,6 +8,7 @@ import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
 	tab: {
+		minWidth: '100px',
 		'&:hover': {
 			opacity: 1.0,
 			fontWeight: 'bold',
@@ -15,7 +16,7 @@ const useStyles = makeStyles({
 	},
 });
 
-export default function Header() {
+export default function NavBar() {
 	const classes = useStyles();
 	const router = useRouter();
 	const isMobile = useMediaQuery(theme => theme.breakpoints.down('xs'));

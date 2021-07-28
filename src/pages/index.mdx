@@ -1,13 +1,3 @@
-import {Summary} from '../components/Summary';
-import {posts} from '../getAllPosts';
+import Home from '../components/Home';
 
-export default function IndexPage() {
-   return (
-      <>
-         <h2>Blog Posts. In alphabetical order</h2>
-         {posts.map(post => (
-            <Summary key={post.link} post={post} />
-         ))}
-      </>
-   );
-}
+export default Home
