@@ -10,7 +10,8 @@
       "start": "next start",
       "export": "next build && rm -rf out docs && next export  && mv out docs && touch ./docs/.nojekyll",
       "lint": "eslint ./ --fix ",
-      "test": "snyk test"
+      "snyk": "snyk test",
+      "test": "jest"
    },
    "dependencies": {
       "@andrew.oxenburgh/cool-button-demo-imported-react-button": "^1.0.2",
@@ -26,6 +27,7 @@
       "eslint-plugin-react": "^7.24.0",
       "next": "10.2.3",
       "prism-react-renderer": "^1.2.1",
+      "ramda": "^0.27.1",
       "react": "17.0.2",
       "react-dom": "17.0.2",
       "react-jss": "^10.6.0",
@@ -37,7 +39,12 @@
       "trim": "^1.0.1"
    },
    "devDependencies": {
+      "@babel/preset-env": "^7.14.8",
+      "@babel/preset-react": "^7.14.5",
       "@mdx-js/react": "^1.6.22",
-      "prop-types": "^15.7.2"
+      "babel-jest": "^27.0.6",
+      "jest": "^27.0.6",
+      "prop-types": "^15.7.2",
+      "react-test-renderer": "^17.0.2"
    }
 }
