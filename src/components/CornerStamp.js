@@ -39,6 +39,8 @@ export function CornerStamp() {
 	// eslint-disable-next-line no-undef
 	let stamp = typeof window !== 'undefined' && window.location.hostname ? window.location.hostname : '';
 
+	console.log('stamp = ' + stamp);
+
 	if (stamp.indexOf('vercel') > 0) {
 		stamp = 'vercel';
 		triangle.borderColor = 'orange orange transparent transparent';
@@ -46,10 +48,11 @@ export function CornerStamp() {
 		stamp = 'github';
 		triangle.borderColor = 'red red transparent transparent';
 	} else {
-		triangle.borderColor = 'pink pink transparent transparent';
+		triangle.borderColor = 'yellow yellow transparent transparent';
 	}
 
 	console.log('stamp = ' + stamp);
+	console.log('triangle.borderColor = ' + triangle.borderColor);
 
 	return (
 		<>
