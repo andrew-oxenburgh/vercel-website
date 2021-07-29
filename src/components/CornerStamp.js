@@ -3,6 +3,14 @@ import React from 'react';
 export function CornerStamp() {
 	const size = 5;
 
+	// eslint-disable-next-line no-undef
+	const name = typeof window !== 'undefined' && window.location.hostname ? window.location.hostname : '';
+
+	let s = {
+		name: 'localhost',
+		color: 'yellow yellow transparent transparent',
+	};
+
 	const triangle = {
 		position: 'absolute',
 		top: 0,
@@ -37,27 +45,29 @@ export function CornerStamp() {
 	};
 
 	// eslint-disable-next-line no-undef
-	let stamp = typeof window !== 'undefined' && window.location.hostname ? window.location.hostname : '';
+	// const stamp = typeof window !== 'undefined' && window.location.hostname ? window.location.hostname : '';
+	// setName('vercel');
 
-	console.log('stamp = ' + stamp);
-
-	if (stamp.indexOf('vercel') > 0) {
-		stamp = 'vercel';
-		triangle.borderColor = 'orange orange transparent transparent';
-	} else if (stamp.indexOf('github') > 0) {
-		stamp = 'github';
-		triangle.borderColor = 'red red transparent transparent';
+	if (name.indexOf('vercel') >= 0) {
+		s = {name: 'vercel',
+			color: 'red red transparent transparent',
+		};
+	} else if (name.indexOf('github') >= 0) {
+		s = {name: 'github',
+			color: 'green green transparent transparent',
+		};
 	} else {
-		triangle.borderColor = 'yellow yellow transparent transparent';
+		// SetColor('yellow yellow transparent transparent');
 	}
 
-	console.log('stamp = ' + stamp);
-	console.log('triangle.borderColor = ' + triangle.borderColor);
+	triangle.borderColor = s.color;
+
+	// Console.log('triangle.borderColor = ' + triangle.borderColor);
 
 	return (
 		<>
 			<div style={triangle}/>
-			<div style={text}>{stamp}</div>
+			<div style={text}>{s.name}</div>
 		</>
 	);
 }
