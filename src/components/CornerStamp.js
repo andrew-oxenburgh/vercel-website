@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import clsx from 'clsx';
 
@@ -22,7 +22,7 @@ const useStyles = makeStyles({
 		borderColor: 'silver, silver transparent transparent',
 	},
 	localhost: {
-		borderColor: 'red red transparent transparent',
+		borderColor: 'magenta orange transparent transparent',
 	},
 	text: {
 		color: 'white',
@@ -45,19 +45,22 @@ const useStyles = makeStyles({
 export function CornerStamp() {
 	// Const size = 5;
 	const classes = useStyles();
+	const [env, setEnv] = useState(null);
 
 	// eslint-disable-next-line no-undef
 	const name = typeof window !== 'undefined' && window.location.hostname ? window.location.hostname : '';
 	let stamp;
-	let env;
 	if (name.indexOf('vercel') >= 0) {
-		env = classes.vercel;
+		// eslint-disable-next-line no-unused-expressions
+		env || setEnv(classes.vercel);
 		stamp = 'vercel';
 	} else if (name.indexOf('github') >= 0) {
-		env = classes.github;
+		// eslint-disable-next-line no-unused-expressions
+		env || setEnv(classes.github);
 		stamp = 'github';
 	} else {
-		env = classes.localhost;
+		// eslint-disable-next-line no-unused-expressions
+		env || setEnv(classes.localhost);
 		stamp = 'local';
 	}
 
