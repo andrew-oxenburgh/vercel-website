@@ -22,7 +22,7 @@ const useStyles = makeStyles({
 		borderColor: 'silver, silver transparent transparent',
 	},
 	localhost: {
-		borderColor: 'magenta orange transparent transparent',
+		borderColor: 'tomato lightsteelblue transparent transparent',
 	},
 	text: {
 		color: 'white',
@@ -45,28 +45,25 @@ const useStyles = makeStyles({
 export function CornerStamp() {
 	// Const size = 5;
 	const classes = useStyles();
-	const [env, setEnv] = useState(null);
 
 	// eslint-disable-next-line no-undef
 	const name = typeof window !== 'undefined' && window.location.hostname ? window.location.hostname : '';
 	let stamp;
 	if (name.indexOf('vercel') >= 0) {
-		// eslint-disable-next-line no-unused-expressions
-		env || setEnv(classes.vercel);
 		stamp = 'vercel';
 	} else if (name.indexOf('github') >= 0) {
-		// eslint-disable-next-line no-unused-expressions
-		env || setEnv(classes.github);
 		stamp = 'github';
 	} else {
-		// eslint-disable-next-line no-unused-expressions
-		env || setEnv(classes.localhost);
 		stamp = 'local';
 	}
 
 	return (
 		<>
-			<div className={clsx(classes.triangle, env)}/>
+			<div className={clsx(classes.triangle,
+				(stamp.indexOf('vercel') >= 0) && classes.vercel,
+				(stamp.indexOf('github') >= 0) && classes.github,
+				(stamp.indexOf('local') >= 0) && classes.localhost,
+			)}/>
 			<div className={classes.text}>{stamp}</div>
 		</>
 	);
