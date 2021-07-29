@@ -6,7 +6,8 @@ import NavBar from './NavBar';
 import PropTypes from 'prop-types';
 import {MDXProvider} from '@mdx-js/react';
 import CodeBlock from './CodeBlock';
-import {ThemeProvider, createMuiTheme} from '@material-ui/core/styles';
+import {createMuiTheme, ThemeProvider} from '@material-ui/core/styles';
+import {CornerStamp} from './CornerStamp';
 
 const components = {
 	pre: props => <div {...props} />,
@@ -26,6 +27,7 @@ export default function Layout({children, pageTitle, description}) {
 			</Head>
 			<MDXProvider components={components}>
 				<main>
+					<CornerStamp/>
 					<ThemeProvider theme={theme}>
 						<NavBar/>
 					</ThemeProvider>
