@@ -50,6 +50,8 @@ export function CornerStamp() {
 		triangle.borderColor = 'pink pink transparent transparent';
 	}
 
+	console.log('stamp = ' + stamp);
+
 	return (
 		<>
 			<div style={triangle}/>
