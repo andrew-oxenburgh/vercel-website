@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import clsx from 'clsx';
 
@@ -22,7 +22,7 @@ const useStyles = makeStyles({
 		borderColor: 'silver, silver transparent transparent',
 	},
 	localhost: {
-		borderColor: 'darkcyan darkcyan transparent transparent',
+		borderColor: 'red red transparent transparent',
 	},
 	text: {
 		color: 'white',
