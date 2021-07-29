@@ -56,7 +56,7 @@ export function CornerStamp() {
 	} else if (name.indexOf('github') >= 0) {
 		env = classes.github;
 		stamp = 'github';
-	} else if (!env) {
+	} else {
 		env = classes.localhost;
 		stamp = 'local';
 	}
