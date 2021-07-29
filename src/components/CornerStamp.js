@@ -8,7 +8,7 @@ export function CornerStamp() {
 
 	let s = {
 		name: 'localhost',
-		color: 'yellow yellow transparent transparent',
+		color: 'pink pink transparent transparent',
 	};
 
 	const triangle = {
