@@ -14,14 +14,14 @@ const useStyles = makeStyles({
 		border: 5 + 'em solid',
 		pointerEvents: 'none',
 	},
+	localhost: {
+		borderColor: 'pink purple transparent transparent',
+	},
 	github: {
 		borderColor: 'rebeccapurple rebeccapurple transparent transparent',
 	},
 	vercel: {
 		borderColor: 'yellow yellow transparent transparent',
-	},
-	localhost: {
-		borderColor: 'pink purple transparent transparent',
 	},
 	text: {
 		color: 'white',
@@ -54,13 +54,13 @@ export function CornerStamp() {
 	} else if (name.indexOf('github') >= 0) {
 		stamp = 'github';
 	} else {
-		stamp = 'local';
+		stamp = 'localhost';
 	}
 
 	const classList = clsx(classes.triangle,
 		(stamp.indexOf('vercel') >= 0) && classes.vercel,
 		(stamp.indexOf('github') >= 0) && classes.github,
-		(stamp.indexOf('local') >= 0) && classes.localhost,
+		(stamp.indexOf('localhost') >= 0) && classes.localhost,
 	);
 
 	console.log('classes.vercel = ' + classes.vercel);
