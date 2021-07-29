@@ -48,20 +48,23 @@ export function CornerStamp() {
 
 	// eslint-disable-next-line no-undef
 	const name = typeof window !== 'undefined' && window.location.hostname ? window.location.hostname : '';
-
+	let stamp;
 	let env;
 	if (name.indexOf('vercel') >= 0) {
 		env = classes.vercel;
+		stamp = 'vercel';
 	} else if (name.indexOf('github') >= 0) {
 		env = classes.github;
+		stamp = 'github';
 	} else if (!env) {
 		env = classes.localhost;
+		stamp = 'local';
 	}
 
 	return (
 		<>
 			<div className={clsx(classes.triangle, env)}/>
-			<div className={classes.text}>{name}</div>
+			<div className={classes.text}>{stamp}</div>
 		</>
 	);
 }
