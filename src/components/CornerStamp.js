@@ -49,19 +49,36 @@ export function CornerStamp() {
 	const name = typeof window !== 'undefined' && window.location.hostname ? window.location.hostname : '';
 
 	let stamp;
+	let env = 0;
 	if (name.indexOf('vercel') >= 0) {
-		stamp = 'vercel';
+		env = 1;
 	} else if (name.indexOf('github') >= 0) {
-		stamp = 'github';
+		env = 2;
 	} else {
-		stamp = 'localhost';
+		env = 3;
 	}
 
-	const classList = clsx(classes.triangle,
-		(stamp.indexOf('vercel') >= 0) && classes.vercel,
-		(stamp.indexOf('github') >= 0) && classes.github,
-		(stamp.indexOf('localhost') >= 0) && classes.here,
-	);
+	let clazz;
+
+	switch (env) {
+		case 1:
+			stamp = 'vercel';
+			clazz = classes.vercel;
+			break;
+		case 2:
+			stamp = 'github';
+			clazz = classes.github;
+			break;
+		case 3:
+			stamp = 'localhost';
+			clazz = classes.here;
+			break;
+		default:
+			stamp = 'unknown';
+			break;
+	}
+
+	const classList = clsx(classes.triangle, clazz);
 
 	console.log('classes.vercel = ' + classes.vercel);
 	console.log('classes.github = ' + classes.github);
@@ -72,7 +89,7 @@ export function CornerStamp() {
 	return (
 		<>
 			<div className={classList}/>
-			<div className={classes.text}>{stamp} hkhkjshf</div>
+			<div className={classes.text}>{stamp} jjjj</div>
 		</>
 	);
 }
