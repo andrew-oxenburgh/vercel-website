@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import clsx from 'clsx';
 
@@ -22,7 +22,7 @@ const useStyles = makeStyles({
 		borderColor: 'silver, silver transparent transparent',
 	},
 	localhost: {
-		borderColor: 'blue blue transparent transparent',
+		borderColor: 'darkcyan darkcyan transparent transparent',
 	},
 	text: {
 		color: 'white',
@@ -47,24 +47,20 @@ export function CornerStamp() {
 	const classes = useStyles();
 
 	// eslint-disable-next-line no-undef
-	let name = typeof window !== 'undefined' && window.location.hostname ? window.location.hostname : '';
+	const name = typeof window !== 'undefined' && window.location.hostname ? window.location.hostname : '';
 
-	let modClass;
-
+	let env;
 	if (name.indexOf('vercel') >= 0) {
-		modClass = classes.vercel;
-		name = 'vercel';
+		env = classes.vercel;
 	} else if (name.indexOf('github') >= 0) {
-		modClass = classes.github;
-		name = 'github';
-	} else {
-		modClass = classes.localhost;
-		name = 'localhost';
+		env = classes.github;
+	} else if (!env) {
+		env = classes.localhost;
 	}
 
 	return (
 		<>
-			<div className={clsx(classes.triangle, modClass)}/>
+			<div className={clsx(classes.triangle, env)}/>
 			<div className={classes.text}>{name}</div>
 		</>
 	);
