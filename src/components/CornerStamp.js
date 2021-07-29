@@ -14,7 +14,7 @@ const useStyles = makeStyles({
 		border: 5 + 'em solid',
 		pointerEvents: 'none',
 	},
-	localhost: {
+	here: {
 		borderColor: 'pink purple transparent transparent',
 	},
 	github: {
@@ -60,19 +60,19 @@ export function CornerStamp() {
 	const classList = clsx(classes.triangle,
 		(stamp.indexOf('vercel') >= 0) && classes.vercel,
 		(stamp.indexOf('github') >= 0) && classes.github,
-		(stamp.indexOf('localhost') >= 0) && classes.localhost,
+		(stamp.indexOf('localhost') >= 0) && classes.here,
 	);
 
 	console.log('classes.vercel = ' + classes.vercel);
 	console.log('classes.github = ' + classes.github);
-	console.log('classes.localhost = ' + classes.localhost);
+	console.log('classes.here = ' + classes.here);
 
 	console.log('classList = ' + classList);
 
 	return (
 		<>
 			<div className={classList}/>
-			<div className={classes.text}>{stamp}</div>
+			<div className={classes.text}>{stamp} hkhkjshf</div>
 		</>
 	);
 }
