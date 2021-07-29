@@ -47,6 +47,7 @@ export function CornerStamp() {
 
 	// eslint-disable-next-line no-undef
 	const name = typeof window !== 'undefined' && window.location.hostname ? window.location.hostname : '';
+
 	let stamp;
 	if (name.indexOf('vercel') >= 0) {
 		stamp = 'vercel';
@@ -61,6 +62,10 @@ export function CornerStamp() {
 		(stamp.indexOf('github') >= 0) && classes.github,
 		(stamp.indexOf('local') >= 0) && classes.localhost,
 	);
+
+	console.log('classes.vercel = ' + classes.vercel);
+	console.log('classes.github = ' + classes.github);
+	console.log('classes.localhost = ' + classes.localhost);
 
 	console.log('classList = ' + classList);
 
