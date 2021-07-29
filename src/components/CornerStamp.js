@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import clsx from 'clsx';
 
@@ -10,7 +10,6 @@ const useStyles = makeStyles({
 		fontSize: '0.5em',
 		width: '0',
 		height: '0',
-		// Opacity: 0.5,
 		zIndex: 100,
 		border: 5 + 'em solid',
 		pointerEvents: 'none',
@@ -19,10 +18,10 @@ const useStyles = makeStyles({
 		borderColor: 'rebeccapurple rebeccapurple transparent transparent',
 	},
 	vercel: {
-		borderColor: 'silver, silver transparent transparent',
+		borderColor: 'yellow yellow transparent transparent',
 	},
 	localhost: {
-		borderColor: 'tomato lightsteelblue transparent transparent',
+		borderColor: 'pink purple transparent transparent',
 	},
 	text: {
 		color: 'white',
@@ -57,13 +56,17 @@ export function CornerStamp() {
 		stamp = 'local';
 	}
 
+	const classList = clsx(classes.triangle,
+		(stamp.indexOf('vercel') >= 0) && classes.vercel,
+		(stamp.indexOf('github') >= 0) && classes.github,
+		(stamp.indexOf('local') >= 0) && classes.localhost,
+	);
+
+	console.log('classList = ' + classList);
+
 	return (
 		<>
-			<div className={clsx(classes.triangle,
-				(stamp.indexOf('vercel') >= 0) && classes.vercel,
-				(stamp.indexOf('github') >= 0) && classes.github,
-				(stamp.indexOf('local') >= 0) && classes.localhost,
-			)}/>
+			<div className={classList}/>
 			<div className={classes.text}>{stamp}</div>
 		</>
 	);
