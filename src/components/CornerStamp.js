@@ -1,6 +1,5 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
-import clsx from 'clsx';
 
 const useStyles = makeStyles({
 	triangle: {
@@ -13,15 +12,7 @@ const useStyles = makeStyles({
 		zIndex: 100,
 		border: 5 + 'em solid',
 		pointerEvents: 'none',
-	},
-	here: {
-		borderColor: 'pink purple transparent transparent',
-	},
-	github: {
 		borderColor: 'rebeccapurple rebeccapurple transparent transparent',
-	},
-	vercel: {
-		borderColor: 'yellow yellow transparent transparent',
 	},
 	text: {
 		color: 'white',
@@ -30,13 +21,14 @@ const useStyles = makeStyles({
 		right: 0,
 		background: 'transparent',
 		fontSize: '0.5em',
+		fontWeight: 'bold',
 		width: 5 + 'rem',
 		height: 5 + 'rem',
 		textAlign: 'center',
 		// Opacity: 0.5,
 		zIndex: 100,
 		transformOrigin: '0 0',
-		transform: 'translateX(3em) rotate(45deg)',
+		transform: 'translateX(3.2em) rotate(45deg)',
 		pointerEvents: 'none',
 	},
 });
@@ -49,47 +41,21 @@ export function CornerStamp() {
 	const name = typeof window !== 'undefined' && window.location.hostname ? window.location.hostname : '';
 
 	let stamp;
-	let env = 0;
+
 	if (name.indexOf('vercel') >= 0) {
-		env = 1;
+		stamp = 'vercel';
 	} else if (name.indexOf('github') >= 0) {
-		env = 2;
+		stamp = 'github';
+	} else if (name.indexOf('localhost') >= 0) {
+		stamp = 'localhost';
 	} else {
-		env = 3;
+		stamp = 'unknown';
 	}
-
-	let clazz;
-
-	switch (env) {
-		case 1:
-			stamp = 'vercel';
-			clazz = classes.vercel;
-			break;
-		case 2:
-			stamp = 'github';
-			clazz = classes.github;
-			break;
-		case 3:
-			stamp = 'localhost';
-			clazz = classes.here;
-			break;
-		default:
-			stamp = 'unknown';
-			break;
-	}
-
-	const classList = clsx(classes.triangle, clazz);
-
-	console.log('classes.vercel = ' + classes.vercel);
-	console.log('classes.github = ' + classes.github);
-	console.log('classes.here = ' + classes.here);
-
-	console.log('classList = ' + classList);
 
 	return (
 		<>
-			<div className={classList}/>
-			<div className={classes.text}>{stamp} jjjj</div>
+			<div className={classes.triangle}/>
+			<div className={classes.text}>{stamp}</div>
 		</>
 	);
 }
