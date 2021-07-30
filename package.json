@@ -1,7 +1,6 @@
 {
   "name": "andrew-oxenburgh.github.io",
   "version": "1.0.1",
-  "private": false,
   "license": "MIT",
   "scripts": {
     "clean": "rimraf node_modules out",
