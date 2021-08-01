@@ -1,28 +1,15 @@
 import React from 'react';
 
-import {BlogSummary} from './BlogSummary';
+import {CornerStamp} from './CornerStamp';
 
 export default {
-	title: 'Blog/BlogSummary',
-	component: BlogSummary,
-	argTypes: {
-		backgroundColor: {control: 'color'},
-	},
+	title: 'Blog/CornerStamp',
+	component: CornerStamp,
 };
 
-const Template = args => <BlogSummary {...args} />;
+const Template = args => <CornerStamp {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-	post: {
-		link: '/some-link',
-		module: {
-			meta: {
-				date: '27th July, 2021',
-				title: 'blog title goes here',
-				description: 'here is a desc',
-				readTime: '5',
-			},
-		},
-	},
+	host: 'vercel',
 };

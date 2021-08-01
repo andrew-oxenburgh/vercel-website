@@ -1,5 +1,7 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
+import {BlogSummary} from './BlogSummary';
 
 const useStyles = makeStyles({
 	triangle: {
@@ -33,20 +35,17 @@ const useStyles = makeStyles({
 	},
 });
 
-export function CornerStamp() {
+export function CornerStamp({host}) {
 	// Const size = 5;
 	const classes = useStyles();
 
-	// eslint-disable-next-line no-undef
-	const name = typeof window !== 'undefined' && window.location.hostname ? window.location.hostname : '';
-
 	let stamp;
 
-	if (name.indexOf('vercel') >= 0) {
+	if (host.indexOf('vercel') >= 0) {
 		stamp = 'vercel';
-	} else if (name.indexOf('github') >= 0) {
+	} else if (host.indexOf('github') >= 0) {
 		stamp = 'github';
-	} else if (name.indexOf('localhost') >= 0) {
+	} else if (host.indexOf('localhost') >= 0) {
 		stamp = 'localhost';
 	} else {
 		stamp = 'unknown';
@@ -59,3 +58,7 @@ export function CornerStamp() {
 		</>
 	);
 }
+
+CornerStamp.propTypes = {
+	host: PropTypes.string,
+};

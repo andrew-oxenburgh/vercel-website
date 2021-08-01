@@ -17,6 +17,9 @@ const components = {
 const theme = createMuiTheme();
 
 export default function Layout({children, pageTitle, description}) {
+	// eslint-disable-next-line no-unused-vars
+	const host = typeof window !== 'undefined' && window.location.hostname ? window.location.hostname : '';
+
 	return (
 		<>
 			<Head>
@@ -27,7 +30,7 @@ export default function Layout({children, pageTitle, description}) {
 			</Head>
 			<MDXProvider components={components}>
 				<main>
-					<CornerStamp/>
+					<CornerStamp host={host}/>
 					<ThemeProvider theme={theme}>
 						<NavBar/>
 					</ThemeProvider>

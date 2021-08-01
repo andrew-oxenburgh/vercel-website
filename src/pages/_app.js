@@ -2,7 +2,6 @@ import React from 'react';
 
 import Layout from '../components/Layout';
 import PropTypes from 'prop-types';
-import '../override.css';
 
 import {StylesProvider, createGenerateClassName} from '@material-ui/core/styles';
 

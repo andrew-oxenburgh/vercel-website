@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import {Card, CardActionArea, CardContent, Typography} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import moment from 'moment';
+import TimerIcon from '@material-ui/icons/Timer';
 
 const useStyles = makeStyles({
 	root: {
@@ -41,6 +42,9 @@ export const BlogSummary = ({post}) => {
 					</Typography>
 					<Typography className={classes.when} variant="body2" color="textSecondary" component="p">
 						{when}
+					</Typography>
+					<Typography className={classes.when} variant="body2" color="textSecondary" component="p">
+						<TimerIcon/>&nbsp;{meta.readTime} minutes
 					</Typography>
 				</CardContent>
 			</CardActionArea>

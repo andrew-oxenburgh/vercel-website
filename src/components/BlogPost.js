@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Link from 'next/link';
-import {Breadcrumbs, Card, CardContent, CardHeader, Typography} from '@material-ui/core';
+import {Breadcrumbs, Card, CardContent, CardHeader} from '@material-ui/core';
 import PropTypes from 'prop-types';
 
 export default function BlogPost({children, meta}) {
@@ -16,7 +16,6 @@ export default function BlogPost({children, meta}) {
 				</Link>
 			</Breadcrumbs>
 
-			{/* <HeadPost meta={meta} isBlogPost/> */}
 			<article>
 				<Card variant="outlined" style={{width: 640}}>
 					<CardHeader
@@ -24,9 +23,7 @@ export default function BlogPost({children, meta}) {
 						subheader={meta.date + ' ☕ ' + meta.readTime + ' min read'}
 					/>
 					<CardContent>
-						<Typography>
-							{children}
-						</Typography>
+						{children}
 					</CardContent>
 				</Card>
 			</article>
