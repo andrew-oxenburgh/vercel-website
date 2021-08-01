@@ -1,0 +1,63 @@
+body {
+	max-width: 100%;
+   font-family: 'Ubuntu Mono', monospace;
+}
+
+h1, h2, h3, h4, h5{
+   font-weight: 400;
+   font-family: 'Ubuntu', sans-serif;
+   color: var(--twilight-lavender);
+   margin:0;
+   padding:0;
+	max-width: 100%;
+}
+
+/*h1 {*/
+/*   margin-inline-start: 1em;*/
+/*   font-size: 300%;*/
+/*}*/
+
+/*h2 {*/
+/*   margin-inline-start: 2em;*/
+/*   font-size: 200%;*/
+/*}*/
+
+/*h3 {*/
+/*   margin-inline-start: 6em;*/
+/*   font-size: 100%;*/
+/*}*/
+
+/*h4 {*/
+/*   margin-inline-start: 10em;*/
+/*   font-size: 75%;*/
+/*}*/
+
+/*h5 {*/
+/*   margin-inline-start: 18em;*/
+/*   font-size: 50%;*/
+/*}*/
+
+/*p.great-title {*/
+/*   margin-inline-start: 1em;*/
+/*   font-size: 200%;*/
+/*}*/
+
+/*div.MuiPaper-root {*/
+/*   !*background-color: pink;*!*/
+/*}*/
+
+/*code {*/
+/*   font-family: 'Ubuntu Mono', monospace;*/
+/*}*/
+
+/*pre {*/
+/*   border-radius: 1em;*/
+/*   margin: 0;*/
+/*   padding:0;*/
+/*}*/
+
+.content {
+	max-width: 100%;
+	overflow-wrap: anywhere;
+	padding-top: 1em;
+}

@@ -14,6 +14,10 @@ const useStyles = makeStyles({
 			fontWeight: 'bold',
 		},
 	},
+	mobileClosed: {
+		color: 'white',
+		opacity: 0.7,
+	},
 });
 
 export default function NavBar() {
@@ -91,9 +95,9 @@ export default function NavBar() {
 	)
 		: (
 			<Box>
-				<IconButton onClick={() => toggleMenu()}>
+				<IconButton className={classes.mobileClosed} onClick={() => toggleMenu()}>
 					<MenuIcon/>
-					{nameFromHref(router.pathname) || 'unknown'}
+					&nbsp; {nameFromHref(router.pathname) || 'unknown'}
 				</IconButton>
 			</Box>
 		);

@@ -3,15 +3,22 @@ import React from 'react';
 import {BlogSummary} from './BlogSummary';
 import {posts} from '../getAllPosts';
 import {orderPostsByDateDesc} from '../utils/orderPosts';
+import {Grid, Link} from '@material-ui/core';
 
 export default function Home() {
 	const orderedPosts = orderPostsByDateDesc(posts);
 	return (
 		<>
-			<h2>Blog Posts. In alphabetical order</h2>
-			{orderedPosts.map(post => (
-				<BlogSummary key={post.link} post={post}/>
-			))}
+			<h2>Blog Posts</h2>
+			<Grid container spacing={3}>
+				{orderedPosts.map(post => (
+					<Grid item xm>
+						<Link href={'/blog' + post.link}>
+							<BlogSummary key={post.link} post={post}/>
+						</Link>
+					</Grid>
+				))}
+			</Grid>
 		</>
 	);
 }

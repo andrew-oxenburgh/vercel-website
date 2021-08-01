@@ -1,48 +1,50 @@
 import React from 'react';
 
-// Import '../override.scss';
-import Link from 'next/link';
 import PropTypes from 'prop-types';
+import {Card, CardActionArea, CardContent, Typography} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
+import moment from 'moment';
 
 const useStyles = makeStyles({
-	article: {
-		paddingTop: '1em',
+	root: {
+		width: '20em',
 	},
-	articleDetails: {
-		cursor: 'pointer',
-		'&:hover': {
-			opacity: 0.5,
-		},
+	content: {
+		padding: '0.5em',
 	},
-	articleTitle: {
-		textDecoration: 'underline',
-		fontWeight: 'bold',
-		fontSize: '150%',
+	title: {
+		borderBottom: '1px solid darkgrey',
+	},
+	when: {
+		fontStyle: 'italic',
 	},
 });
 
 export const BlogSummary = ({post}) => {
-	const classes = useStyles();
-
 	const {
 		link,
 		module: {meta},
 	} = post;
 
+	const classes = useStyles();
+	const moment1 = moment(meta.date);
+	const when = moment(moment1).fromNow();
 	return (
-		<article className={classes.article}>
-			<Link href={'/blog' + link} className={classes.link}>
-				<span className={classes.articleDetails}>
-					<span className={classes.articleTitle}>{meta.title}</span>
-					<span>&nbsp;{meta.date}</span>
-					<span role="img" aria-label="coffee">
-        ☕ {meta.readTime + ' min read'}
-					</span>
-					<span >Read more →</span>
-				</span>
-			</Link>
-		</article>
+		<Card className={classes.root} variant="outlined">
+			<CardActionArea>
+				<CardContent className={classes.content}>
+					<Typography className={classes.title} gutterBottom variant="h5" component="h2">
+						{meta.title}
+					</Typography>
+					<Typography variant="body2" color="textSecondary" component="p">
+						{meta.description}
+					</Typography>
+					<Typography className={classes.when} variant="body2" color="textSecondary" component="p">
+						{when}
+					</Typography>
+				</CardContent>
+			</CardActionArea>
+		</Card>
 	);
 };
 

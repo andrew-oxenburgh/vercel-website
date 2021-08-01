@@ -20,6 +20,7 @@ Primary.args = {
 			meta: {
 				date: '27th July, 2021',
 				title: 'blog title goes here',
+				description: 'here is a desc',
 				readTime: '5',
 			},
 		},
