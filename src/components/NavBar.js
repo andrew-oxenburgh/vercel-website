@@ -9,14 +9,15 @@ import {makeStyles} from '@material-ui/core/styles';
 const useStyles = makeStyles({
 	tab: {
 		minWidth: '100px',
+		opacity: 1.0,
 		'&:hover': {
-			opacity: 1.0,
 			fontWeight: 'bold',
+			textDecoration: 'underline',
 		},
 	},
 	mobileClosed: {
 		color: 'white',
-		opacity: 0.7,
+		opacity: 1,
 	},
 });
 
