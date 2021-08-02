@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {BlogSummary} from './BlogSummary';
-import {posts} from '../getAllPosts';
+import {posts} from '../utils/getAllPosts';
 import {orderPostsByDateDesc} from '../utils/orderPosts';
 import {Grid, Link} from '@material-ui/core';
 
