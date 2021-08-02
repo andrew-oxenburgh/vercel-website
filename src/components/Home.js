@@ -12,7 +12,7 @@ export default function Home() {
 			<h2>Blog Posts</h2>
 			<Grid container spacing={3}>
 				{orderedPosts.map(post => (
-					<Grid item xm key={post.link}>
+					<Grid item md key={post.link}>
 						<Link href={'/blog' + post.link}>
 							<BlogSummary key={post.link} post={post}/>
 						</Link>
