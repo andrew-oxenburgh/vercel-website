@@ -1,7 +1,8 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
-import {BlogSummary} from './BlogSummary';
+// Import {BlogSummary} from './BlogSummary';
+import {Typography} from '@material-ui/core';
 
 const useStyles = makeStyles({
 	triangle: {
@@ -52,10 +53,10 @@ export function CornerStamp({host}) {
 	}
 
 	return (
-		<>
+		<Typography component={'span'}>
 			<div className={classes.triangle}/>
 			<div className={classes.text}>{stamp}</div>
-		</>
+		</Typography>
 	);
 }
 

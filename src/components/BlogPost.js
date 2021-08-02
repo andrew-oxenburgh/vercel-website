@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Link from 'next/link';
-import {Breadcrumbs, Card, CardContent, CardHeader} from '@material-ui/core';
+import {Breadcrumbs, Card, CardContent, CardHeader, Typography} from '@material-ui/core';
 import PropTypes from 'prop-types';
 
 export default function BlogPost({children, meta}) {
@@ -23,7 +23,7 @@ export default function BlogPost({children, meta}) {
 						subheader={meta.date + ' ☕ ' + meta.readTime + ' min read'}
 					/>
 					<CardContent>
-						{children}
+						<Typography component={'span'}>{children}</Typography>
 					</CardContent>
 				</Card>
 			</article>
