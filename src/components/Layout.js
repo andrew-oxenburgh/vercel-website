@@ -1,7 +1,6 @@
 /* eslint-disable react/display-name */
 import React, {useState} from 'react';
 
-import Head from 'next/head';
 import NavBar from './NavBar';
 import PropTypes from 'prop-types';
 import {MDXProvider} from '@mdx-js/react';
@@ -16,7 +15,7 @@ const components = {
 
 const theme = createTheme();
 
-export default function Layout({children, pageTitle, description}) {
+export default function Layout({children}) {
 	const [host, setHost] = useState('');
 
 	// eslint-disable-next-line no-undef
@@ -27,12 +26,6 @@ export default function Layout({children, pageTitle, description}) {
 
 	return (
 		<>
-			<Head>
-				<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5.0, minimum-scale=1.0"/>
-				<meta charSet="utf-8"/>
-				<meta name="description" content={description}/>
-				<title>{pageTitle}</title>
-			</Head>
 			<MDXProvider components={components}>
 				<main>
 					<CornerStamp host={host}/>
@@ -51,6 +44,6 @@ Layout.propTypes = {
 		PropTypes.object,
 		PropTypes.array,
 	]),
-	pageTitle: PropTypes.string,
-	description: PropTypes.string,
+	// PageTitle: PropTypes.string,
+	// description: PropTypes.string,
 };

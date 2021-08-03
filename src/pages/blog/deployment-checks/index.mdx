@@ -1,0 +1,36 @@
+import BlogPost from '../../../components/BlogPost'
+
+export const meta = {
+    title: 'Deployment checks',
+    description: 'Check list',
+    date: 'July 27, 2021',
+    readTime: '5',
+}
+
+export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
+
+## Deployment
+
+### Notes
+
+1. Github Pages require we use a `/docs` dir for our output. `next export` outputs to an `/out/` dir.
+
+1. I move it after a successful export, and add a `.nojekyll` file to prevent ignoring underscored files.
+
+### Known issues
+
+1. JS errors due to using `<table/>` tags in `<p/>` tags
+
+### What to do to deploy site
+
+- [ ] Clean it - `yarn clean`
+- [ ] Re pull it - `yarn`
+- [ ] Lint it `yarn lint`
+- [ ] Synk it `yarn test`
+- [ ] Check pages
+- [ ] Run the app with `yarn dev`
+- [ ] Check all links work with no 404's
+- [ ] Check all pages work with no JS errors.
+- [ ] export using `yarn export`
+- [ ] commit changes in git
+

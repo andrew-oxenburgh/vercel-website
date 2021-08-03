@@ -23,7 +23,6 @@ const useStyles = makeStyles({
 
 export const BlogSummary = ({post}) => {
 	const {
-		link,
 		module: {meta},
 	} = post;
 

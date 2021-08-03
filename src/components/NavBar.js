@@ -53,12 +53,12 @@ export default function NavBar() {
 		};
 	}
 
-	let value = router.pathname;
+	const value = router.pathname;
 
-	value = value.replace(/(\/blog)\/.*/, '$1');
-	if (value === '/blog') {
-		value = '/';
-	}
+	// Value = value.replace(/(\/blog)\/.*/, '$1');
+	// if (value === '/blog') {
+	// 	value = '/';
+	// }
 
 	const tabs = (
 		<Tabs
@@ -67,18 +67,22 @@ export default function NavBar() {
 			orientation={isMobile ? 'vertical' : 'horizontal'}
 		>
 			<LinkTab href="/" label="𝕿𝖍𝖊 𝕺𝖝 &nbsp;" router={router} value={'/'} {...a11yProps(0)}/>
-			<LinkTab href="/projects" label="Projects" router={router} value={'/projects'} {...a11yProps(1)}/>
-			<LinkTab href="/about" label="About" router={router} value={'/about'} {...a11yProps(2)}/>
-			<LinkTab href="/components" label="Components" router={router} value="/components"{...a11yProps(3)}/>
-			<LinkTab href="/deployment-checks" label="Deployment" router={router} value={'/deployment-checks'} {...a11yProps(4)}/>
-			<LinkTab href="/to-do" label="To Do" router={router} value="/to-do" {...a11yProps(5)}/>
+			<LinkTab href="/blog/projects" label="Projects" router={router} value={'/blog/projects'} {...a11yProps(1)}/>
+			<LinkTab href="/blog/about" label="About" router={router} value={'/blog/about'} {...a11yProps(2)}/>
+			<LinkTab href="/blog/components" label="Components" router={router} value="/blog/components"{...a11yProps(3)}/>
+			<LinkTab href="/blog/deployment-checks" label="Deployment" router={router} value={'/blog/deployment-checks'} {...a11yProps(4)}/>
+			<LinkTab href="/blog/to-do" label="To Do" router={router} value="/blog/to-do" {...a11yProps(5)}/>
 		</Tabs>
 	);
 
 	const nameFromHref = href => {
 		const defaults = {
 			'/': 'Home',
-			'/to-do': 'To do',
+			'/blog/about': 'About',
+			'/blog/components': 'Components',
+			'/blog/deployment-checks': 'Checks',
+			'/blog/projects': 'Projects',
+			'/blog/to-do': 'To do',
 		};
 
 		let ret = defaults[href];
