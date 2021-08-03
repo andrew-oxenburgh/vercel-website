@@ -1,7 +1,11 @@
 import React from 'react';
 
 import Link from 'next/link';
-import {Breadcrumbs, Card, CardContent, CardHeader, Typography} from '@material-ui/core';
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardHeader from '@material-ui/core/CardHeader';
+import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 import {Helmet} from 'react-helmet';
 

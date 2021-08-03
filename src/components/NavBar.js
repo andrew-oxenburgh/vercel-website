@@ -1,7 +1,13 @@
 import React, {useState} from 'react';
 
 import {useRouter} from 'next/router';
-import {AppBar, IconButton, useMediaQuery, Tabs, Tab, Box} from '@material-ui/core';
+
+import AppBar from '@material-ui/core/AppBar';
+import IconButton from '@material-ui/core/IconButton';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Box from '@material-ui/core/Box';
 import MenuIcon from '@material-ui/icons/Menu';
 import PropTypes from 'prop-types';
 import {makeStyles} from '@material-ui/core/styles';
@@ -53,7 +59,17 @@ export default function NavBar() {
 		};
 	}
 
-	const value = router.pathname;
+	let value = router.pathname;
+
+	if ([
+		'/blog/projects',
+		'/blog/about',
+		'/blog/components',
+		'/blog/deployment-checks',
+		'/blog/to-do',
+	].indexOf(value) < 0) {
+		value = '/';
+	}
 
 	// Value = value.replace(/(\/blog)\/.*/, '$1');
 	// if (value === '/blog') {
@@ -66,7 +82,7 @@ export default function NavBar() {
 			value={value}
 			orientation={isMobile ? 'vertical' : 'horizontal'}
 		>
-			<LinkTab href="/" label="𝕿𝖍𝖊 𝕺𝖝 &nbsp;" router={router} value={'/'} {...a11yProps(0)}/>
+			<LinkTab default href="/" label="𝕿𝖍𝖊 𝕺𝖝 &nbsp;" router={router} value={'/'} {...a11yProps(0)}/>
 			<LinkTab href="/blog/projects" label="Projects" router={router} value={'/blog/projects'} {...a11yProps(1)}/>
 			<LinkTab href="/blog/about" label="About" router={router} value={'/blog/about'} {...a11yProps(2)}/>
 			<LinkTab href="/blog/components" label="Components" router={router} value="/blog/components"{...a11yProps(3)}/>

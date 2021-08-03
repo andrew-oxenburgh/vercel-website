@@ -1,8 +1,7 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
-// Import {BlogSummary} from './BlogSummary';
-import {Typography} from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
 	triangle: {
