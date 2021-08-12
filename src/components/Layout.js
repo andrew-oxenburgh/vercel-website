@@ -5,7 +5,8 @@ import NavBar from './NavBar';
 import PropTypes from 'prop-types';
 import {MDXProvider} from '@mdx-js/react';
 import CodeBlock from './CodeBlock';
-import {createTheme, ThemeProvider} from '@material-ui/core/styles';
+import createTheme from '@material-ui/core/styles/createTheme';
+import {ThemeProvider} from '@material-ui/core/styles';
 import {CornerStamp} from './CornerStamp';
 
 const components = {
