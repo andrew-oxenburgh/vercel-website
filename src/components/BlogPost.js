@@ -12,7 +12,7 @@ import {Helmet} from 'react-helmet';
 export default function BlogPost({children, meta}) {
 	return (
 		<>
-			<Breadcrumbs aria-label="breadcrumb">
+			<Breadcrumbs separator="›" aria-label="breadcrumb">
 				<Link color="textPrimary" href="/">
                     Home
 				</Link>
