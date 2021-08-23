@@ -28,7 +28,7 @@
     "eslint-config-xo": "^0.37.0",
     "eslint-plugin-react": "^7.24.0",
     "moment": "^2.29.1",
-    "next": "10.2.3",
+    "next": "11.1.0",
     "prism-react-renderer": "^1.2.1",
     "ramda": "^0.27.1",
     "react": "17.0.2",
