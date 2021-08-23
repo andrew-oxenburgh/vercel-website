@@ -82,7 +82,7 @@ export default function NavBar() {
 			value={value}
 			orientation={isMobile ? 'vertical' : 'horizontal'}
 		>
-			<LinkTab default href="/" label="𝕿𝖍𝖊 𝕺𝖝 &nbsp;" router={router} value={'/'} {...a11yProps(0)}/>
+			<LinkTab default href="/" style={{fontFamily: 'Besley, serif', fontSize: '120%', width: '8em'}} label="The Ox" router={router} value={'/'} {...a11yProps(0)}/>
 			<LinkTab href="/blog/projects" label="Projects" router={router} value={'/blog/projects'} {...a11yProps(1)}/>
 			<LinkTab href="/blog/about" label="About" router={router} value={'/blog/about'} {...a11yProps(2)}/>
 			<LinkTab href="/blog/components" label="Components" router={router} value="/blog/components"{...a11yProps(3)}/>

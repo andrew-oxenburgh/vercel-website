@@ -10,7 +10,9 @@ import TimerIcon from '@material-ui/icons/Timer';
 
 const useStyles = makeStyles({
 	root: {
-		width: '20em',
+		minWidth: '20em',
+		overflowWrap: 'break-word',
+		overflow: 'clip',
 	},
 	content: {
 		padding: '0.5em',

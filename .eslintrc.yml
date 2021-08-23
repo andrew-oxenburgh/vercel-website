@@ -14,8 +14,9 @@ parserOptions:
 plugins:
   - react
   - '@typescript-eslint'
-rules: {}
-
+rules:
+   'no-var': 'error'
+   'prefer-const': 'off'
 settings:
    react:
       version: detect

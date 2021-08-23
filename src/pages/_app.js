@@ -17,6 +17,9 @@ export default function App({Component, pageProps}) {
 				<meta name="description" content="Basic example" />
 				<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5.0, minimum-scale=1.0"/>
 				<meta charSet="utf-8"/>
+				<link rel="preconnect" href="https://fonts.googleapis.com"/>
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
+				<link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,500;0,900;1,400&display=swap" rel="stylesheet"/>
 			</Helmet>
 			<Layout pageTitle="Blog" description="My Personal Blog">
 				<Component {...pageProps} />
