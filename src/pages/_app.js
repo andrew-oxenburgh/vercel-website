@@ -20,6 +20,7 @@ export default function App({Component, pageProps}) {
 				<link rel="preconnect" href="https://fonts.googleapis.com"/>
 				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
 				<link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,500;0,900;1,400&display=swap" rel="stylesheet"/>
+				<link rel="manifest" href="/manifest.json"/>
 			</Helmet>
 			<Layout pageTitle="Blog" description="My Personal Blog">
 				<Component {...pageProps} />

@@ -41,7 +41,10 @@ export default function BlogPost({children, meta}) {
 }
 
 BlogPost.propTypes = {
-	children: PropTypes.array,
+	children: PropTypes.oneOfType([
+		PropTypes.object,
+		PropTypes.array,
+	]),
 	meta: PropTypes.shape({
 		title: PropTypes.string,
 		date: PropTypes.string,
