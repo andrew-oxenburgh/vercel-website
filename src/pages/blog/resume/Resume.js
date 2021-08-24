@@ -19,22 +19,30 @@ export const useStyles = makeStyles({
 		},
 		'& ol': {
 			listStyle: 'lower-roman',
+			marginBlockStart: '0.5em',
+		},
+		'& li': {
+			paddingLeft: '0.5em',
 		},
 		'& p': {
 			textIndent: '1em',
 		},
 		'& h4': {
-			textDecoration: 'underline',
 			fontSize: '120%',
 			fontStyle: 'italic',
 			fontWeight: 'bold',
 			marginBlockEnd: '0em',
 			marginBlockStart: '0.5em',
+			letterSpacing: '0.5em',
+			textAlign: 'center',
+			backgroundColor: 'lightblue',
+			borderRadius: '0.5em',
+			border: '1px lightblue solid',
 		},
 		'& h1': {
 			textAlign: 'center',
 			letterSpacing: '0.7em',
-			backgroundColor: 'lightsteelblue',
+			backgroundColor: 'CornflowerBlue',
 			fontSize: '1.5em',
 			fontStyle: 'italic',
 			fontWeight: 'bold',
