@@ -26,7 +26,7 @@ export default function BlogPost({children, meta}) {
 			</Helmet>
 
 			<article>
-				<Card variant="outlined" style={{width: 640}}>
+				<Card variant="outlined" style={{width: 900}}>
 					<CardHeader
 						title={meta.title}
 						subheader={meta.date + ' ☕ ' + meta.readTime + ' min read'}

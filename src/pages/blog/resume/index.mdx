@@ -1,5 +1,12 @@
 import BlogPost from '../../../components/BlogPost'
 import Resume from './Resume'
+import PhoneIcon from '@material-ui/icons/Phone'
+import LinkedInIcon from '@material-ui/icons/LinkedIn'
+import Link from "@material-ui/core/Link";
+import GitHubIcon from '@material-ui/icons/GitHub';
+import MailIcon from '@material-ui/icons/Email'
+import HomeWorkIcon from '@material-ui/icons/HomeWork';
+import Grid from "@material-ui/core/Grid";
 
 export const thing = 'thang';
 
@@ -10,6 +17,15 @@ export const meta = {
 	readTime: '5',
 }
 
+export const linkStyle = {
+	marginTop: '1em',
+	marginBottom: '1em',
+	display: 'flex',
+	alignItems: 'center',
+	flexWrap: 'wrap',
+	color: '#333333'
+}
+
 export default ({children}) => <BlogPost meta={meta}>
 	<Resume>
 		{children}
@@ -18,15 +34,13 @@ export default ({children}) => <BlogPost meta={meta}>
 
 # Andrew Oxenburgh
 
-+64 (0) 22 677 4995
-
-## Webapp DevOp at Large
+#### Webapp DevOp at Large
 
 An experienced DevOps with 30 years in back and front app design and deployment and a broad, deep knowledge of App and WebApp design, development and deployment.
 
 *Looking for interesting and challenging contracts in Christchurch (or remotely).*
 
-Loves => **Developing and deploying Apps and Web App&apos;s, large and small**
+**Loves developing and deploying Apps and Web App&apos;s, large and small**
 
 #### Core Competencies
 
@@ -51,7 +65,7 @@ Loves => **Developing and deploying Apps and Web App&apos;s, large and small**
 
 **Obviously:** Git, NPM, Yarn, Snyk, Babel, Webpack, Jest, Mocha, ESLint
 
-**Not obviously:** Next.js, MDX, Bootstrap, MaterialUI, CommonJS, ES6 Modules, Ramda, UnderscoreJs/LoDash, jQuery, jQueryUI, Apache Cordova, Chai, Gulp, Storybook.js, SASS, SCSS, CSS-in-JS, EditorConfig,
+**Not necessarily obviously:** Next.js, MDX, Bootstrap, MaterialUI, CommonJS, ES6 Modules, Ramda, UnderscoreJs/LoDash, jQuery, jQueryUI, Apache Cordova, Chai, Gulp, Storybook.js, SASS, SCSS, CSS-in-JS, EditorConfig,
 
 30 years post-graduate in a wide variety of environments: Corporate, Start Up, OSS, Finance, Advertising, Media, Food Stuffs, PoS systems, Airline Booking systems, DVOR automation.
 
@@ -59,16 +73,53 @@ Loves => **Developing and deploying Apps and Web App&apos;s, large and small**
 
 Fairfax, IBM, AdScale, Unilever, TD Waterhouse, Sky, various consultancies, Practical Law, London Futures Exchange (LIFFE)
 
-#### Based in:
-
-The Garden City, Christchurch, NZ
-
 #### Hobbies:
 
 7 yo twins, so that takes up a lot of time.
 
 RPG's:
-	Dungeons and Dragons, 5e
-	Hero Kids
+Dungeons and Dragons, 5e
+Hero Kids
 
 Dogs
+
+#### Deet&apos;s
+
+<Box
+	style={linkStyle}><HomeWorkIcon/>
+	&nbsp; The Garden City, Christchurch, NZ
+</Box>
+
+<Link
+	href="tel:+61226774995/"
+	style={linkStyle}><PhoneIcon/>
+	&nbsp; (intl) +61 (0) 22 677 4995
+</Link>
+
+<Link
+	href="tel:0226774995/"
+	style={linkStyle}><PhoneIcon/>
+	&nbsp; (nz) 022 677 4995
+</Link>
+<Link
+	href="https://github.com/andrew-oxenburgh"
+	target="_blank"
+	style={linkStyle}><GitHubIcon/>
+	&nbsp; github
+</Link>
+
+<Link
+	href="https://www.linkedin.com/in/andrew-oxenburgh-a789b17/"
+	target="_blank"
+	style={linkStyle}><LinkedInIcon/>
+	&nbsp; LinkedIn
+</Link>
+
+<Link
+	href="mailto:andrew.oxenburgh@gmail.com"
+	target="_blank"
+	style={linkStyle}><MailIcon/>
+	&nbsp; andrew.oxenburgh@gmail.com
+</Link>
+
+
