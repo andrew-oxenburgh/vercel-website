@@ -61,8 +61,6 @@ test('order posts by date - empty dates go to end', () => {
 	posts[2].link = '/empty-date';
 	const orderedPosts = postsFilteredByDraftSortedByDateDescending(posts);
 
-	console.log('orderedPosts = ' + JSON.stringify(orderedPosts, null, 4));
-
 	expect(orderedPosts.length).toEqual(3);
 	expect(orderedPosts[0].link).toEqual('/third');
 	expect(orderedPosts[1].link).toEqual('/first');
@@ -75,8 +73,6 @@ test('order posts by date - null dates go to end', () => {
 	posts[2].link = '/empty-date';
 	const orderedPosts = postsFilteredByDraftSortedByDateDescending(posts);
 
-	console.log('orderedPosts = ' + JSON.stringify(orderedPosts, null, 4));
-
 	expect(orderedPosts.length).toEqual(3);
 	expect(orderedPosts[0].link).toEqual('/third');
 	expect(orderedPosts[1].link).toEqual('/first');
@@ -88,8 +84,6 @@ test('order posts by date - alpha dates go to end', () => {
 	posts[2].module.meta.date = 'kjgkfjhdsjkfhkjhdfskjhkjdfhs';
 	posts[2].link = '/empty-date';
 	const orderedPosts = postsFilteredByDraftSortedByDateDescending(posts);
-
-	console.log('orderedPosts = ' + JSON.stringify(orderedPosts, null, 4));
 
 	expect(orderedPosts.length).toEqual(3);
 	expect(orderedPosts[0].link).toEqual('/third');

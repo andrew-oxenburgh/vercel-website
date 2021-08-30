@@ -33,7 +33,9 @@ export const useStyles = makeStyles({
 			fontWeight: 'bold',
 			marginBlockEnd: '0em',
 			marginBlockStart: '0.5em',
-			letterSpacing: '0.5em',
+			'@media (min-width: 600px)': {
+				letterSpacing: '0.5em',
+			},
 			textAlign: 'center',
 			backgroundColor: 'lightblue',
 			borderRadius: '0.5em',
@@ -41,7 +43,9 @@ export const useStyles = makeStyles({
 		},
 		'& h1': {
 			textAlign: 'center',
-			letterSpacing: '0.7em',
+			'@media (min-width: 600px)': {
+				letterSpacing: '0.7em',
+			},
 			backgroundColor: 'CornflowerBlue',
 			fontSize: '1.5em',
 			fontStyle: 'italic',
