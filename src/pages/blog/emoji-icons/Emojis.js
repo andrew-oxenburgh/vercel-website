@@ -57,7 +57,7 @@ export const useStyles = makeStyles({
 	},
 });
 
-export default function Resume({children}) {
+export default function Emojis({children}) {
 	let classes = useStyles();
 	return (
 		<div className={classes.resume}>
@@ -66,7 +66,7 @@ export default function Resume({children}) {
 	);
 }
 
-Resume.propTypes = {
+Emojis.propTypes = {
 	children: PropTypes.array,
 };
 

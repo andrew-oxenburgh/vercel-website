@@ -10,7 +10,7 @@ import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 import MenuIcon from '@material-ui/icons/Menu';
 import PropTypes from 'prop-types';
-import {makeStyles} from '@material-ui/core/styles';
+import makeStyles from '@material-ui/styles/makeStyles';
 
 const useStyles = makeStyles({
 	tab: {
@@ -30,7 +30,7 @@ const useStyles = makeStyles({
 export default function NavBar() {
 	const classes = useStyles();
 	const router = useRouter();
-	const isMobile = useMediaQuery(theme => theme.breakpoints.down('xs'));
+	const isMobile = useMediaQuery(theme => theme.breakpoints.down('sm'));
 	const [mobileMenuOpen, setMobileMenuOpen] = useState();
 
 	function toggleMenu() {
@@ -111,7 +111,10 @@ export default function NavBar() {
 	)
 		: (
 			<Box>
-				<IconButton className={classes.mobileClosed} onClick={() => toggleMenu()}>
+				<IconButton
+                    className={classes.mobileClosed}
+                    onClick={() => toggleMenu()}
+                    size="large">
 					<MenuIcon/>
 					&nbsp; {nameFromHref(router.pathname) || 'unknown'}
 				</IconButton>

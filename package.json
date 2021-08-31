@@ -15,9 +15,11 @@
   },
   "dependencies": {
     "@andrew.oxenburgh/cool-button-demo-imported-react-button": "^1.0.2",
-    "@material-ui/core": "^4.11.4",
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@material-ui/core": "next",
     "@material-ui/icons": "^4.11.2",
-    "@material-ui/styles": "^4.11.4",
+    "@material-ui/styles": "next",
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/runtime": "^1.6.22",
     "@next/mdx": "^10.2.3",

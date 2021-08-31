@@ -3,7 +3,8 @@ import React from 'react';
 import Layout from '../components/Layout';
 import PropTypes from 'prop-types';
 
-import {StylesProvider, createGenerateClassName} from '@material-ui/core/styles';
+import StylesProvider from '@material-ui/styles/StylesProvider';
+import createGenerateClassName from '@material-ui/styles/createGenerateClassName';
 import {Helmet} from 'react-helmet';
 
 const generateClassName = createGenerateClassName({});
