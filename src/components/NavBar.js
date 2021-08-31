@@ -15,10 +15,21 @@ import makeStyles from '@material-ui/styles/makeStyles';
 const useStyles = makeStyles({
 	tab: {
 		minWidth: '100px',
+		width: '10em',
 		opacity: 1.0,
+		color: 'black',
+		borderBottom: '3px solid',
+		borderBottomColor: 'lightblue',
 		'&:hover': {
 			fontWeight: 'bold',
 			textDecoration: 'underline',
+		},
+		'&:visited': {
+			color: 'black',
+		},
+		'&.Mui-selected': {
+			borderBottomColor: 'darkblue',
+			fontWeight: 'bold',
 		},
 	},
 	mobileClosed: {
@@ -63,7 +74,7 @@ export default function NavBar() {
 
 	if ([
 		'/blog/projects',
-		'/blog/about',
+		'/blog/resume',
 		'/blog/components',
 		'/blog/deployment-checks',
 		'/blog/to-do',
@@ -78,7 +89,7 @@ export default function NavBar() {
 			orientation={isMobile ? 'vertical' : 'horizontal'}
 		>
 			<LinkTab default href="/" style={{fontFamily: 'Besley, serif', fontSize: '120%', width: '8em'}} label="The Ox" router={router} value={'/'} {...a11yProps(0)}/>
-			<LinkTab href="/blog/projects" label="Projects" router={router} value={'/blog/projects'} {...a11yProps(1)}/>
+			<LinkTab href="/blog/projects" label="Projects" router={router} value={'/blog/projects'} {...a11yProps(1)} />
 			<LinkTab href="/blog/resume" label="Resume" router={router} value={'/blog/resume'} {...a11yProps(2)}/>
 			<LinkTab href="/blog/components" label="Components" router={router} value="/blog/components"{...a11yProps(3)}/>
 			<LinkTab href="/blog/deployment-checks" label="Deployment" router={router} value={'/blog/deployment-checks'} {...a11yProps(4)}/>
@@ -88,10 +99,10 @@ export default function NavBar() {
 
 	const nameFromHref = href => {
 		const defaults = {
-			'/': 'Home',
+			'/': 'The Ox',
 			'/blog/about': 'About',
 			'/blog/components': 'Components',
-			'/blog/deployment-checks': 'Checks',
+			'/blog/deployment-checks': 'Deployment',
 			'/blog/projects': 'Projects',
 			'/blog/to-do': 'To do',
 		};
@@ -112,9 +123,9 @@ export default function NavBar() {
 		: (
 			<Box>
 				<IconButton
-                    className={classes.mobileClosed}
-                    onClick={() => toggleMenu()}
-                    size="large">
+					className={classes.mobileClosed}
+					onClick={toggleMenu}
+					size="large">
 					<MenuIcon/>
 					&nbsp; {nameFromHref(router.pathname) || 'unknown'}
 				</IconButton>

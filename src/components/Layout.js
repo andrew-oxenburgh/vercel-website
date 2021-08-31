@@ -5,7 +5,7 @@ import NavBar from './NavBar';
 import PropTypes from 'prop-types';
 import {MDXProvider} from '@mdx-js/react';
 import CodeBlock from './CodeBlock';
-import { ThemeProvider, StyledEngineProvider, createTheme } from '@material-ui/core/styles';
+import {ThemeProvider, StyledEngineProvider, createTheme} from '@material-ui/core/styles';
 import {CornerStamp} from './CornerStamp';
 
 const components = {
@@ -25,18 +25,18 @@ export default function Layout({children}) {
 	}
 
 	return <>
-        <MDXProvider components={components}>
-            <main>
-                <CornerStamp host={host}/>
-                <StyledEngineProvider injectFirst>
-                    <ThemeProvider theme={theme}>
+		<MDXProvider components={components}>
+			<main>
+				<CornerStamp host={host}/>
+				<StyledEngineProvider injectFirst>
+					<ThemeProvider theme={theme}>
 						<NavBar/>
 					</ThemeProvider>
-                </StyledEngineProvider>
-                <div className="content">{children}</div>
-            </main>
-        </MDXProvider>
-    </>;
+				</StyledEngineProvider>
+				<div className="content">{children}</div>
+			</main>
+		</MDXProvider>
+	</>;
 }
 
 Layout.propTypes = {

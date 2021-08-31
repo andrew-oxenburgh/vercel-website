@@ -42,10 +42,10 @@ export const BlogSummary = ({post}) => {
 				<Typography variant="body2" color="textSecondary" component="p">
 					{meta.description}
 				</Typography>
-				<Typography className={classes.when} variant="body2" color="textSecondary" component="p">
+				<Typography className={classes.when} variant="body2" color="textSecondary" component="span">
 					{when}
 				</Typography>
-				<Typography className={classes.when} variant="body2" color="textSecondary" component="p">
+				<Typography className={classes.when} variant="body2" color="textSecondary" component="span">
 					<TimerIcon/>&nbsp;{meta.readTime} minutes
 				</Typography>
 			</CardContent>

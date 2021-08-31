@@ -12,7 +12,7 @@ export default function BlogList() {
 	orderedPosts = orderedPosts.filter(post => !post.module.meta.draft);
 	return (
 		<>
-			<Typography><h2>Blog Posts</h2></Typography>
+			<Typography component="div"><h3>Blog Posts</h3></Typography>
 			<Grid container spacing={3}>
 				{orderedPosts.map(post => (
 					<Grid item md key={post.link}>
@@ -22,7 +22,7 @@ export default function BlogList() {
 					</Grid>
 				))}
 			</Grid>
-			<Typography>
+			<Typography component="div">
 				<p>
 				Photo by <a href="https://unsplash.com/@elizabethlies?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">elizabeth lies</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 				</p>
