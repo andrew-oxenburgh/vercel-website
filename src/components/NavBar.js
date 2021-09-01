@@ -140,7 +140,7 @@ export default function NavBar() {
 
 	return (
 		<AppBar position="static">
-			{body}
+			{/*{body}*/}
 		</AppBar>
 	);
 }
