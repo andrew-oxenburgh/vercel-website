@@ -27,7 +27,7 @@ export default function BlogPost({children, meta}) {
 
 			<article>
 				<Card variant="outlined" style={{width: 900, maxWidth: '100%'}}>
-					<CardHeader component={'h1'}
+					<CardHeader
 						title={meta.title}
 						subheader={meta.date + ' ☕ ' + meta.readTime + ' min read'}
 					/>

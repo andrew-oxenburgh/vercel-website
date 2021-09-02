@@ -5,9 +5,6 @@ import PropTypes from 'prop-types';
 export const useStyles = makeStyles({
 	resume: {
 		textAlign: 'justify',
-		backgroundImage: 'url(/elizabeth-lies-T9Gsevu_N8Y-unsplash.jpg)',
-		backgroundColor: 'lightsteelblue',
-		backgroundBlendMode: 'screen',
 		color: '#333333',
 		fontFamily: 'Besley, serif',
 		borderRadius: '0.5em',
