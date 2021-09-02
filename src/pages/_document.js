@@ -20,6 +20,11 @@ class MyDocument extends Document {
 					<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
 					<link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,500;0,900;1,400&display=swap" rel="stylesheet" crossOrigin="true"/>
 					<link rel="manifest" href="/manifest.json"/>
+
+					<meta property="og:title" content="Andrews Blog" />
+					<meta property="og:type" content="article" />
+					<meta property="og:image" content="/logo192.png/" />
+
 				</head>
 				<Head>
 				</Head>
