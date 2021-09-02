@@ -13,7 +13,7 @@ export default function App({Component, pageProps}) {
 	return (
 		<StylesProvider generateClassName={generateClassName}>
 			<Helmet
-				titleTemplate='Andrews Blog - %s'
+				titleTemplate="Andrews Blog - %s"
 			>
 			</Helmet>
 			<Layout pageTitle="Blog" description="My Personal Blog">
