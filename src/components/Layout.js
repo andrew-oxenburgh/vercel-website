@@ -1,4 +1,3 @@
-/* eslint-disable react/display-name */
 import React, {useState} from 'react';
 
 import NavBar from './NavBar';
@@ -31,9 +30,9 @@ export default function Layout({children}) {
 				<StylesProvider injectFirst>
 					<ThemeProvider theme={theme}>
 						<NavBar/>
+						<div className="content">{children}</div>
 					</ThemeProvider>
 				</StylesProvider>
-				<div className="content">{children}</div>
 			</main>
 		</MDXProvider>
 	</>;
