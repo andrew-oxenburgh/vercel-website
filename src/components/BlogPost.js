@@ -23,6 +23,7 @@ export default function BlogPost({children, meta}) {
 			<Helmet>
 				<meta name="description" content={meta.description}/>
 				<title>{meta.title}</title>
+				<meta property="og:description" content={meta.description}/>
 			</Helmet>
 
 			<article>
