@@ -1,12 +1,5 @@
-import React from 'react';
 import Highlight, {defaultProps} from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/okaidia';
-import PropTypes from 'prop-types';
-
-CodeBlock.propTypes = {
-	children: PropTypes.node,
-	className: PropTypes.string,
-};
 
 function CodeBlock({children, className}) {
 	const language = className.replace(/language-/, '');

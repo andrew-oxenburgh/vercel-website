@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 
 import {styled} from '@material-ui/core/styles';
 
@@ -11,7 +11,6 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 import MenuIcon from '@material-ui/icons/Menu';
-import PropTypes from 'prop-types';
 
 const PREFIX = 'NavBar';
 
@@ -56,8 +55,8 @@ const StyledAppBar = styled(AppBar)({
 
 export default function NavBar() {
 	const router = useRouter();
-	const isMobile = useMediaQuery(theme => theme.breakpoints.down('sm'));
-	const [mobileMenuOpen, setMobileMenuOpen] = useState();
+	const isMobile = useMediaQuery((theme: {breakpoints}) => theme.breakpoints.down('sm'));
+	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 	function toggleMenu() {
 		setMobileMenuOpen(!mobileMenuOpen);
@@ -72,10 +71,6 @@ export default function NavBar() {
 			/>
 		);
 	}
-
-	LinkTab.propTypes = {
-		href: PropTypes.string,
-	};
 
 	function a11yProps(index,
 	) {
@@ -139,8 +134,7 @@ export default function NavBar() {
 			<Box>
 				<IconButton
 					className={classes.mobileClosed}
-					onClick={toggleMenu}
-					size="large">
+					onClick={toggleMenu}>
 					<MenuIcon/>
 					&nbsp; {nameFromHref(router.pathname) || 'unknown'}
 				</IconButton>

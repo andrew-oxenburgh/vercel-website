@@ -1,6 +1,4 @@
 import makeStyles from '@material-ui/core/styles/makeStyles';
-import React from 'react';
-import PropTypes from 'prop-types';
 
 export const useStyles = makeStyles({
 	resume: {
@@ -62,8 +60,3 @@ export default function Resume({children}) {
 		</div>
 	);
 }
-
-Resume.propTypes = {
-	children: PropTypes.array,
-};
-

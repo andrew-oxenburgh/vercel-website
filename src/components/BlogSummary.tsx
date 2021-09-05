@@ -1,11 +1,8 @@
-import React from 'react';
-
 import {styled} from '@material-ui/core/styles';
-
-import PropTypes from 'prop-types';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+// @ts-ignore
 import moment from 'moment';
 import TimerIcon from '@material-ui/icons/Timer';
 
@@ -35,13 +32,9 @@ const StyledCard = styled(Card)({
 	},
 });
 
-export const BlogSummary = ({post}) => {
-	const {
-		module: {meta},
-	} = post;
-
+export const BlogSummary = ({post: {module: {meta}}}) => {
 	const moment1 = moment(meta.date);
-	const when = moment(moment1).fromNow();
+	const when = moment1.fromNow();
 	return (
 		<StyledCard className={classes.root} variant="outlined">
 			<CardContent className={classes.content}>
@@ -61,12 +54,3 @@ export const BlogSummary = ({post}) => {
 		</StyledCard>
 	);
 };
-
-BlogSummary.propTypes = {
-	post: PropTypes.shape({
-		link: PropTypes.string,
-		module: PropTypes.object,
-		readTime: PropTypes.number,
-	}),
-};
-
