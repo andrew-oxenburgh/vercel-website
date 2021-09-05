@@ -6,6 +6,7 @@ import {postsFilteredByDraftSortedByDateDescending} from '../utils/orderPosts';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
+import {Helmet} from 'react-helmet';
 
 export default function BlogList() {
 	let orderedPosts = postsFilteredByDraftSortedByDateDescending(posts);
@@ -17,6 +18,9 @@ export default function BlogList() {
 				{orderedPosts.map(post => (
 					<Grid item md key={post.link}>
 						<Link href={'/blog' + post.link}>
+							<Helmet>
+								<link rel="preload" as="script" href={'/blog' + post.link}/>
+							</Helmet>
 							<BlogSummary key={post.link} post={post}/>
 						</Link>
 					</Grid>
