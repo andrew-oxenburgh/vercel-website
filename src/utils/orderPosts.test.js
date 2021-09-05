@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+/* global test, expect */
 
 import {postsFilteredByDraftSortedByDateDescending} from './orderPosts';
 
