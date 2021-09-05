@@ -1,26 +1,36 @@
 import React from 'react';
 
+import {styled} from '@material-ui/core/styles';
+
 import PropTypes from 'prop-types';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import makeStyles from '@material-ui/styles/makeStyles';
 import moment from 'moment';
 import TimerIcon from '@material-ui/icons/Timer';
 
-const useStyles = makeStyles({
-	root: {
+const PREFIX = 'BlogSummary';
+
+const classes = {
+	root: `${PREFIX}-root`,
+	content: `${PREFIX}-content`,
+	title: `${PREFIX}-title`,
+	when: `${PREFIX}-when`,
+};
+
+const StyledCard = styled(Card)({
+	[`&.${classes.root}`]: {
 		minWidth: '20em',
 		overflowWrap: 'break-word',
 		overflow: 'clip',
 	},
-	content: {
+	[`& .${classes.content}`]: {
 		padding: '0.5em',
 	},
-	title: {
+	[`& .${classes.title}`]: {
 		borderBottom: '1px solid darkgrey',
 	},
-	when: {
+	[`& .${classes.when}`]: {
 		fontStyle: 'italic',
 	},
 });
@@ -30,11 +40,10 @@ export const BlogSummary = ({post}) => {
 		module: {meta},
 	} = post;
 
-	const classes = useStyles();
 	const moment1 = moment(meta.date);
 	const when = moment(moment1).fromNow();
 	return (
-		<Card className={classes.root} variant="outlined">
+		<StyledCard className={classes.root} variant="outlined">
 			<CardContent className={classes.content}>
 				<Typography className={classes.title} gutterBottom variant="h5" component="h2">
 					{meta.title}
@@ -49,7 +58,7 @@ export const BlogSummary = ({post}) => {
 					<TimerIcon/>&nbsp;{meta.readTime} minutes
 				</Typography>
 			</CardContent>
-		</Card>
+		</StyledCard>
 	);
 };
 

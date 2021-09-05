@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 
+import {styled} from '@material-ui/core/styles';
+
 import {useRouter} from 'next/router';
 
 import AppBar from '@material-ui/core/AppBar';
@@ -10,15 +12,22 @@ import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 import MenuIcon from '@material-ui/icons/Menu';
 import PropTypes from 'prop-types';
-import makeStyles from '@material-ui/styles/makeStyles';
 
-const useStyles = makeStyles({
-	tab: {
+const PREFIX = 'NavBar';
+
+const classes = {
+	tab: `${PREFIX}-tab`,
+	tablist: `${PREFIX}-tablist`,
+	mobileClosed: `${PREFIX}-mobileClosed`,
+};
+
+const StyledAppBar = styled(AppBar)({
+	[`& .${classes.tab}`]: {
 		minWidth: '100px',
 		width: '10em',
 		opacity: 1.0,
 		color: 'black',
-		backgroundColor: 'steelblue',
+		// BackgroundColor: 'steelblue',
 		borderBottom: '3px solid',
 		borderBottomColor: 'lightblue',
 		'&:hover': {
@@ -34,19 +43,18 @@ const useStyles = makeStyles({
 			fontWeight: 'bold',
 		},
 	},
-	tablist: {
+	[`& .${classes.tablist}`]: {
 		'& .MuiTabs-indicator': {
 			background: 'darkblue',
 		},
 	},
-	mobileClosed: {
+	[`& .${classes.mobileClosed}`]: {
 		color: 'white',
 		opacity: 1,
 	},
 });
 
 export default function NavBar() {
-	const classes = useStyles();
 	const router = useRouter();
 	const isMobile = useMediaQuery(theme => theme.breakpoints.down('sm'));
 	const [mobileMenuOpen, setMobileMenuOpen] = useState();
@@ -126,8 +134,7 @@ export default function NavBar() {
 	};
 
 	const mobile = mobileMenuOpen ? (
-		<>{tabs}</>
-	)
+		<>{tabs}</>)
 		: (
 			<Box>
 				<IconButton
@@ -147,8 +154,8 @@ export default function NavBar() {
 	);
 
 	return (
-		<AppBar position="static">
+		<StyledAppBar position="static">
 			{body}
-		</AppBar>
+		</StyledAppBar>
 	);
 }

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import {MDXProvider} from '@mdx-js/react';
 import CodeBlock from './CodeBlock';
 import {ThemeProvider, StylesProvider, createTheme} from '@material-ui/core/styles';
-import {CornerStamp} from './CornerStamp';
+// Import {CornerStamp} from './CornerStamp';
 
 const components = {
 	pre: props => <div {...props} />,
@@ -26,7 +26,7 @@ export default function Layout({children}) {
 	return <>
 		<MDXProvider components={components}>
 			<main>
-				<CornerStamp host={host}/>
+				{/* <CornerStamp host={host}/> */}
 				<StylesProvider injectFirst>
 					<ThemeProvider theme={theme}>
 						<NavBar/>
