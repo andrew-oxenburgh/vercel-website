@@ -15,6 +15,8 @@ export default function App({Component, pageProps}) {
 			<Helmet
 				titleTemplate="Andrews Blog - %s"
 			>
+				<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+
 			</Helmet>
 			<Layout pageTitle="Blog" description="My Personal Blog">
 				<Component {...pageProps} />

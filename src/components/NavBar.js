@@ -18,6 +18,7 @@ const useStyles = makeStyles({
 		width: '10em',
 		opacity: 1.0,
 		color: 'black',
+		backgroundColor: 'steelblue',
 		borderBottom: '3px solid',
 		borderBottomColor: 'lightblue',
 		'&:hover': {
@@ -29,7 +30,13 @@ const useStyles = makeStyles({
 		},
 		'&.Mui-selected': {
 			borderBottomColor: 'darkblue',
+			backgroundColor: 'lightsteelblue',
 			fontWeight: 'bold',
+		},
+	},
+	tablist: {
+		'& .MuiTabs-indicator': {
+			background: 'darkblue',
 		},
 	},
 	mobileClosed: {
@@ -84,6 +91,7 @@ export default function NavBar() {
 
 	const tabs = (
 		<Tabs
+			className={classes.tablist}
 			variant="scrollable"
 			value={value}
 			orientation={isMobile ? 'vertical' : 'horizontal'}
