@@ -16,7 +16,7 @@ export default function BlogList() {
 			<Grid container spacing={3}>
 				{orderedPosts.map(post => (
 					<Grid item md key={post.link}>
-						<Link href={'/blog' + post.link}>
+						<Link passHref href={'/blog' + post.link}>
 							<BlogSummary key={post.link} post={post}/>
 						</Link>
 					</Grid>

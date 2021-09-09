@@ -13,10 +13,10 @@ export default function BlogPost({children, meta}) {
 	return (
 		<>
 			<Breadcrumbs separator="›" aria-label="breadcrumb">
-				<Link color="textPrimary" href="/">
+				<Link passHref color="textPrimary" href="/">
                     Home
 				</Link>
-				<Link color="textPrimary" href="#">
+				<Link passHref color="textPrimary" href="#">
 					{meta.title}
 				</Link>
 			</Breadcrumbs>
