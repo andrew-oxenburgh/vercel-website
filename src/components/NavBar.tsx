@@ -1,4 +1,6 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
+
+import {styled} from '@material-ui/core/styles';
 
 import {useRouter} from 'next/router';
 
@@ -9,16 +11,23 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 import MenuIcon from '@material-ui/icons/Menu';
-import PropTypes from 'prop-types';
-import makeStyles from '@material-ui/styles/makeStyles';
 import {Helmet} from 'react-helmet';
 
-const useStyles = makeStyles({
-	tab: {
+const PREFIX = 'NavBar';
+
+const classes = {
+	tab: `${PREFIX}-tab`,
+	tablist: `${PREFIX}-tablist`,
+	mobileClosed: `${PREFIX}-mobileClosed`,
+};
+
+const StyledAppBar = styled(AppBar)({
+	[`& .${classes.tab}`]: {
 		minWidth: '100px',
 		width: '10em',
 		opacity: 1.0,
 		color: 'black',
+		// BackgroundColor: 'steelblue',
 		borderBottom: '3px solid',
 		borderBottomColor: 'lightblue',
 		'&:hover': {
@@ -30,20 +39,25 @@ const useStyles = makeStyles({
 		},
 		'&.Mui-selected': {
 			borderBottomColor: 'darkblue',
+			backgroundColor: 'lightsteelblue',
 			fontWeight: 'bold',
 		},
 	},
-	mobileClosed: {
+	[`& .${classes.tablist}`]: {
+		'& .MuiTabs-indicator': {
+			background: 'darkblue',
+		},
+	},
+	[`& .${classes.mobileClosed}`]: {
 		color: 'white',
 		opacity: 1,
 	},
 });
 
 export default function NavBar() {
-	const classes = useStyles();
 	const router = useRouter();
-	const isMobile = useMediaQuery(theme => theme.breakpoints.down('sm'));
-	const [mobileMenuOpen, setMobileMenuOpen] = useState();
+	const isMobile = useMediaQuery((theme: { breakpoints }) => theme.breakpoints.down('sm'));
+	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 	function toggleMenu() {
 		setMobileMenuOpen(!mobileMenuOpen);
@@ -53,9 +67,9 @@ export default function NavBar() {
 		return (
 			<>
 				<Tab className={classes.tab}
-					  component="a"
-					  value={props.href}
-					  {...props}
+					component="a"
+					value={props.href}
+					{...props}
 				>
 				</Tab>
 				<Helmet>
@@ -64,10 +78,6 @@ export default function NavBar() {
 			</>
 		);
 	}
-
-	LinkTab.propTypes = {
-		href: PropTypes.string,
-	};
 
 	function a11yProps(index,
 	) {
@@ -91,6 +101,7 @@ export default function NavBar() {
 
 	const tabs = (
 		<Tabs
+			className={classes.tablist}
 			variant="scrollable"
 			value={value}
 			orientation={isMobile ? 'vertical' : 'horizontal'}
@@ -125,14 +136,13 @@ export default function NavBar() {
 	};
 
 	const mobile = mobileMenuOpen ? (
-			<>{tabs}</>
-		)
+		<>{tabs}</>
+	)
 		: (
 			<Box>
 				<IconButton
 					className={classes.mobileClosed}
-					onClick={toggleMenu}
-					size="large">
+					onClick={toggleMenu}>
 					<MenuIcon/>
 					&nbsp; {nameFromHref(router.pathname) || 'unknown'}
 				</IconButton>
@@ -146,8 +156,8 @@ export default function NavBar() {
 	);
 
 	return (
-		<AppBar position="static">
+		<StyledAppBar position="static">
 			{body}
-		</AppBar>
+		</StyledAppBar>
 	);
 }
