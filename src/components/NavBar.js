@@ -11,6 +11,7 @@ import Box from '@material-ui/core/Box';
 import MenuIcon from '@material-ui/icons/Menu';
 import PropTypes from 'prop-types';
 import makeStyles from '@material-ui/styles/makeStyles';
+import {Helmet} from 'react-helmet';
 
 const useStyles = makeStyles({
 	tab: {
@@ -50,11 +51,17 @@ export default function NavBar() {
 
 	function LinkTab(props) {
 		return (
-			<Tab className={classes.tab}
-				component="a"
-				value={props.href}
-				{...props}
-			/>
+			<>
+				<Tab className={classes.tab}
+					  component="a"
+					  value={props.href}
+					  {...props}
+				>
+				</Tab>
+				<Helmet>
+					<link rel="prefetch" href={props.href}/>
+				</Helmet>
+			</>
 		);
 	}
 
@@ -118,8 +125,8 @@ export default function NavBar() {
 	};
 
 	const mobile = mobileMenuOpen ? (
-		<>{tabs}</>
-	)
+			<>{tabs}</>
+		)
 		: (
 			<Box>
 				<IconButton

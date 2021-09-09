@@ -1,5 +1,6 @@
 import Document, {Html, Head, Main, NextScript} from 'next/document';
 import React from 'react';
+import {Helmet} from "react-helmet";
 
 class MyDocument extends Document {
 	static async getInitialProps(ctx) {
@@ -10,7 +11,7 @@ class MyDocument extends Document {
 	render() {
 		return (
 			<Html>
-				<head>
+				<Helmet>
 					<html lang="en" />
 					<title>Andrews Blog</title>
 					<meta name="description" content="Basic example" />
@@ -25,7 +26,7 @@ class MyDocument extends Document {
 					<meta property="og:type" content="article" />
 					<meta property="og:image" content="/logo192.png/" />
 
-				</head>
+				</Helmet>
 				<Head>
 				</Head>
 				<body>

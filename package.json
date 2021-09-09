@@ -5,6 +5,7 @@
   "scripts": {
     "clean": "rimraf node_modules out",
     "dev": "next dev",
+    "export": "next export",
     "build": "next build",
     "start": "next start",
     "lint": "eslint ./ --fix ",
