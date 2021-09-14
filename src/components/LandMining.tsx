@@ -1,10 +1,9 @@
-/* eslint-disable quotes */
 import {useState} from 'react';
 
 let init = Array(4).fill(Array(4).fill(''));
 
 function LandMining() {
-	// eslint-disable-next-line prefer-spread
+	// eslint-disable-next-line no-unused-vars
 	let [matrix, setMatrix] = useState(init);
 
 	const rndr = (
