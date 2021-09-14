@@ -12,6 +12,7 @@ import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 import MenuIcon from '@material-ui/icons/Menu';
 import {Helmet} from 'react-helmet';
+import {cordovaise} from '../utils/utils';
 
 const PREFIX = 'NavBar';
 
@@ -24,9 +25,9 @@ const classes = {
 const StyledAppBar = styled(AppBar)({
 	[`& .${classes.tab}`]: {
 		minWidth: '100px',
-		width: '10em',
+		maxWidth: '20em',
 		opacity: 1.0,
-		color: 'black',
+		// color: 'white',
 		// BackgroundColor: 'steelblue',
 		borderBottom: '3px solid',
 		borderBottomColor: 'lightblue',
@@ -34,13 +35,17 @@ const StyledAppBar = styled(AppBar)({
 			fontWeight: 'bold',
 			textDecoration: 'underline',
 		},
-		'&:visited': {
-			color: 'black',
-		},
 		'&.Mui-selected': {
 			borderBottomColor: 'darkblue',
 			backgroundColor: 'lightsteelblue',
 			fontWeight: 'bold',
+			color: 'black',
+		},
+		'& .MuiTab-wrapper': {
+			color: 'white',
+		},
+		'&.Mui-selected .MuiTab-wrapper': {
+			color: 'black',
 		},
 	},
 	[`& .${classes.tablist}`]: {
@@ -56,7 +61,7 @@ const StyledAppBar = styled(AppBar)({
 
 export default function NavBar() {
 	const router = useRouter();
-	const isMobile = useMediaQuery((theme: { breakpoints }) => theme.breakpoints.down('sm'));
+	const isMobile = useMediaQuery((theme: { breakpoints }) => theme.breakpoints.down('xs'));
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 	function toggleMenu() {
@@ -73,7 +78,7 @@ export default function NavBar() {
 				>
 				</Tab>
 				<Helmet>
-					<link rel="prefetch" href={props.href}/>
+					<link rel="prefetch" href={props.href} as="script"/>
 				</Helmet>
 			</>
 		);
@@ -90,9 +95,11 @@ export default function NavBar() {
 	let value = router.pathname;
 
 	if ([
+		'/blog',
 		'/blog/projects',
 		'/blog/resume',
 		'/blog/components',
+		'/blog/navigator',
 		'/blog/deployment-checks',
 		'/blog/to-do',
 	].indexOf(value) < 0) {
@@ -107,17 +114,15 @@ export default function NavBar() {
 			orientation={isMobile ? 'vertical' : 'horizontal'}
 		>
 			<LinkTab default href="/" style={{fontFamily: 'Besley, serif', fontSize: '120%', width: '8em'}} label="The Ox" router={router} value={'/'} {...a11yProps(0)}/>
-			<LinkTab href="/blog/projects" label="Projects" router={router} value={'/blog/projects'} {...a11yProps(1)} />
-			<LinkTab href="/blog/resume" label="Resume" router={router} value={'/blog/resume'} {...a11yProps(2)}/>
-			<LinkTab href="/blog/components" label="Components" router={router} value="/blog/components"{...a11yProps(3)}/>
-			<LinkTab href="/blog/deployment-checks" label="Deployment" router={router} value={'/blog/deployment-checks'} {...a11yProps(4)}/>
-			<LinkTab href="/blog/to-do" label="To Do" router={router} value="/blog/to-do" {...a11yProps(5)}/>
+			<LinkTab href={cordovaise('/blog')} label="Blog Postings" router={router} value={cordovaise('/blog')} {...a11yProps(1)} />
+			<LinkTab href={cordovaise('/blog/navigator')} label="Navigator" router={router} value={cordovaise('/blog/navigator')} {...a11yProps(2)} />
 		</Tabs>
 	);
 
 	const nameFromHref = href => {
 		const defaults = {
 			'/': 'The Ox',
+			'/blog': 'Blog Posts',
 			'/blog/about': 'About',
 			'/blog/components': 'Components',
 			'/blog/deployment-checks': 'Deployment',

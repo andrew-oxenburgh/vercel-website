@@ -9,7 +9,7 @@ function LinkButton({router, href, label}) {
 	};
 
 	return (
-		<Link href={href} passHref>
+		<Link passHref href={href}>
 			<Button variant="contained" color={calcColor(router, href)}>{label}</Button>
 		</Link>
 	);

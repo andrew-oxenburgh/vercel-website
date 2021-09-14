@@ -18,6 +18,7 @@ plugins:
 rules:
    'no-var': 'error'
    'prefer-const': 'off'
+   'capitalized-comments': 'off'
 settings:
    react:
       version: detect

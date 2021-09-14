@@ -2,11 +2,13 @@
   "name": "andrew-oxenburgh.github.io",
   "version": "1.0.4",
   "license": "MIT",
+	"homepage": "./",
   "scripts": {
     "clean": "rimraf node_modules out",
     "dev": "next dev",
     "export": "next export",
     "build": "next build",
+    "cordova": "APP_TYPE=cordova next build && yarn export",
     "start": "next start",
     "lint": "eslint ./src --fix ",
     "snyk": "snyk test",

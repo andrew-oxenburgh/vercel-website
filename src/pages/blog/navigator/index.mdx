@@ -1,0 +1,17 @@
+import BlogPost from '../../../components/BlogPost'
+import CodeBlock from "../../../components/CodeBlock";
+
+export const meta = {
+    title: 'To do',
+    description: 'To do list',
+    date: '20210802',
+    readTime: '5',
+}
+
+export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
+
+export const nav = (typeof navigator === 'undefined') ? "no navigator" : navigator
+
+<CodeBlock className="json">
+	{JSON.stringify(nav, null, 4)	}
+</CodeBlock>

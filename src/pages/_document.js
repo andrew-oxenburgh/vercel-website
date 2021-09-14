@@ -10,27 +10,48 @@ class MyDocument extends Document {
 	}
 
 	render() {
+		// eslint-disable-next-line @next/next/no-sync-scripts
+		const CORDOVA_SCRIPT = (process.env.APP_TYPE === 'cordova') ? <script type="text/javascript" src="cordova.js"/> : '';
+		const META_VIEWPORT = (process.env.APP_TYPE === 'cordova')
+			? <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover"/>
+			: <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5.0, minimum-scale=1.0"/>;
+
+		const CORDOVA_CSP = (process.env.APP_TYPE === 'cordova')
+			? <>
+				<meta httpEquiv="Content-Security-Policy" content="default-src 'self' data: filesystem: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline"/>
+				<meta httpEquiv="Content-Security-Policy" content="style-src 'self' 'unsafe-inline'"/>
+				<meta httpEquiv="Content-Security-Policy" content="media-src *;"/>
+				<meta httpEquiv="Content-Security-Policy" content="img-src 'self' data: content:;"/>
+
+				<meta name="format-detection" content="telephone=no"/>
+				<meta name="msapplication-tap-highlight" content="no"/>
+			</>
+			: '';
+
 		return (
 			<Html>
 				<Helmet>
-					<html lang="en" />
 					<title>Andrews Blog</title>
-					<meta name="description" content="Basic example" />
-					<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5.0, minimum-scale=1.0"/>
+					{META_VIEWPORT}
+				</Helmet>
+				<Head>
+					<html lang="en"/>
+					<meta name="description" content="Basic example"/>
 					<meta charSet="utf-8"/>
 					<link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="true"/>
 					<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
 					<link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,500;0,900;1,400&display=swap" rel="stylesheet" crossOrigin="true"/>
 					<link rel="manifest" href="/manifest.json"/>
-					<meta property="og:title" content="Andrews Blog" />
-					<meta property="og:type" content="article" />
-					<meta property="og:image" content="/logo192.png/" />
-				</Helmet>
-				<Head>
+					<meta property="og:title" content="Andrews Blog"/>
+					<meta property="og:type" content="article"/>
+					<meta property="og:image" content="/logo192.png/"/>
+					{CORDOVA_SCRIPT}
+					<meta name="process.env.APP_TYPE" content={process.env.APP_TYPE}/>
+					{CORDOVA_CSP}
 				</Head>
 				<body>
-					<Main />
-					<NextScript />
+					<Main/>
+					<NextScript/>
 				</body>
 			</Html>
 		);

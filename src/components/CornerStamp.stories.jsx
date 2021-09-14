@@ -2,6 +2,7 @@ import React from 'react';
 
 import {BlogSummary} from './BlogSummary';
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
 	title: 'Blog/BlogSummary',
 	component: BlogSummary,

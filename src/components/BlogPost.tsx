@@ -5,15 +5,16 @@ import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
 import Typography from '@material-ui/core/Typography';
 import {Helmet} from 'react-helmet';
+import {cordovaise} from '../utils/utils';
 
 export default function BlogPost({children, meta}) {
 	return (
 		<>
 			<Breadcrumbs separator="›" aria-label="breadcrumb">
-				<Link passHref href="/">
+				<Link href={cordovaise('/')}>
                     Home
 				</Link>
-				<Link passHref href="#">
+				<Link href="#">
 					{meta.title}
 				</Link>
 			</Breadcrumbs>

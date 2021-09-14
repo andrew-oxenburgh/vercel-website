@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import {Helmet} from 'react-helmet';
+import {cordovaise} from '../utils/utils';
 
 export default function BlogList() {
 	let orderedPosts: [] = postsFilteredByDraftSortedByDateDescending(posts);
@@ -16,9 +17,9 @@ export default function BlogList() {
 			<Grid container spacing={3}>
 				{orderedPosts.map((post: { link, title, module: {meta} }) => (
 					<Grid item md key={post.link}>
-						<Link href={'/blog' + post.link}>
+						<Link href={cordovaise('/blog' + post.link)}>
 							<Helmet>
-								<link rel="preload" as="script" href={'/blog' + post.link}/>
+								<link rel="preload" as="script" href={cordovaise('/blog' + post.link)}/>
 							</Helmet>
 							<BlogSummary key={post.link} post={post}/>
 						</Link>
