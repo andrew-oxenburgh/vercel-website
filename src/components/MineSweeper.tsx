@@ -123,10 +123,10 @@ const STATE = {
 };
 
 const RESULT = {
-	UNKNOWN: 0,
-	WON: 1,
-	LOST: 2,
-	CHECK: 3,
+	UNKNOWN: 'unknown',
+	WON: 'won',
+	LOST: 'lost',
+	CHECK: 'check',
 };
 
 function Cell({val, resultEvent, result, initState}) {
@@ -290,5 +290,11 @@ function MineSweeper() {
 		</>
 	);
 }
+
+export {
+	Cell,
+	Line,
+	TableWrapper,
+};
 
 export default MineSweeper;
