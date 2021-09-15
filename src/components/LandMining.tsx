@@ -198,7 +198,7 @@ function Cell({val, resultEvent, result, initState}) {
 			tileComponent = TILES.FLAGGED;
 			break;
 		case STATE.DEAD:
-			if (result !== RESULT.UNKNOWN) {
+			if (result === RESULT.UNKNOWN) {
 				tileComponent = TILES.DEAD;
 			} else {
 				tileComponent = TILES.DEAD_NOT_DISCOVERED;
@@ -249,9 +249,8 @@ function LandMining() {
 	}
 
 	const rndr = (
-		<TableWrapper cellSpacing="0" className={classes.table} result={result}>
-			{result}
-			<tbody result={result}>
+		<TableWrapper cellSpacing="0" className={classes.table}>
+			<tbody>
 				{
 					board.map((line, lIndex) => (<Line className={classes.line} key={`line-${lIndex}-${count}`}>{
 						line.map((cell, cIndex) => <Cell key={'cell-' + lIndex + '-' + cIndex + '-' + count} val={cell} resultEvent={setResult} result={result} initState={STATE.FLUX}/>)
