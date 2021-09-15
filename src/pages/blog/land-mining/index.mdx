@@ -8,7 +8,7 @@ export const meta = {
     readTime: '5',
 }
 
-export default ({ children }) => <LandMining/>;
+export default ({ children }) => <BlogPost meta={meta}><LandMining/></BlogPost>;
 
 export const nav = (typeof navigator === 'undefined') ? "no navigator" : navigator
 
