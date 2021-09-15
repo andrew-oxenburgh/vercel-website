@@ -1,0 +1,15 @@
+import BlogPost from '../../../components/BlogPost'
+import MineSweeper from "../../../components/MineSweeper";
+
+export const meta = {
+    title: 'Mine Sweeper',
+    description: 'Find all the mines',
+    date: '20210914',
+    readTime: '5',
+}
+
+export default ({ children }) => <BlogPost meta={meta}><MineSweeper/></BlogPost>;
+
+export const nav = (typeof navigator === 'undefined') ? "no navigator" : navigator
+
+

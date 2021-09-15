@@ -20,11 +20,12 @@ const classes = {
 	tab: `${PREFIX}-tab`,
 	tablist: `${PREFIX}-tablist`,
 	mobileClosed: `${PREFIX}-mobileClosed`,
+	textAlign: 'center',
 };
 
 const StyledAppBar = styled(AppBar)({
 	[`& .${classes.tab}`]: {
-		minWidth: '100px',
+		width: '13em',
 		maxWidth: '20em',
 		opacity: 1.0,
 		// color: 'white',
@@ -98,6 +99,7 @@ export default function NavBar() {
 		'/blog',
 		'/blog/projects',
 		'/blog/resume',
+		'/blog/mine-sweeper',
 		'/blog/components',
 		'/blog/navigator',
 		'/blog/deployment-checks',
@@ -115,7 +117,7 @@ export default function NavBar() {
 		>
 			<LinkTab default href="/" style={{fontFamily: 'Besley, serif', fontSize: '120%', width: '8em'}} label="The Ox" router={router} value={'/'} {...a11yProps(0)}/>
 			<LinkTab href={cordovaise('/blog')} label="Blog Postings" router={router} value={cordovaise('/blog')} {...a11yProps(1)} />
-			<LinkTab href={cordovaise('/blog/navigator')} label="Navigator" router={router} value={cordovaise('/blog/navigator')} {...a11yProps(2)} />
+			<LinkTab href={cordovaise('/blog/mine-sweeper')} label="Mine Sweeper" router={router} value={cordovaise('/blog/mine-sweeper')} {...a11yProps(1)} />
 		</Tabs>
 	);
 

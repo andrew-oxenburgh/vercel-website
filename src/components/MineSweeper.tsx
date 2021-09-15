@@ -6,7 +6,7 @@ import DeadIcon from '@material-ui/icons/Clear';
 import {Button} from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 
-const PREFIX = 'LandMining';
+const PREFIX = 'MineSweeper';
 
 const classes = {
 	cell: `${PREFIX}-cell`,
@@ -233,7 +233,7 @@ let init = [
 	[['0', '1', '2', '3', '4', '5', '6', '7', '8']],
 ];
 
-function LandMining() {
+function MineSweeper() {
 	let [result, setResult] = useState(RESULT.UNKNOWN);
 	let [count, setCount] = useState(0);
 	let [board, setBoard] = useState(init[count]);
@@ -279,7 +279,7 @@ function LandMining() {
 	return (
 		<>
 			<h1>
-				Land Mines - Work in Progress
+				Mine Sweeper - Work in Progress
 			</h1>
 			{resultBanner}
 			<Typography>
@@ -291,4 +291,4 @@ function LandMining() {
 	);
 }
 
-export default LandMining;
+export default MineSweeper;
