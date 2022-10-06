@@ -43,7 +43,7 @@
     "react-router-dom": "^5.2.0",
     "rimraf": "^3.0.2",
     "sass": "^1.36.0",
-    "snyk": "^1.696.0",
+    "snyk": "^1.996.0",
     "storybook": "^6.3.8"
   },
   "resolutions": {
